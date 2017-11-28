@@ -1,0 +1,500 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Garamond;
+  color: #C8BCB3;
+  background-color:  #2b2b2b;
+}
+@font-face {
+  font-family: 'Baskerville';
+  src: url('fonts/librebaskerville-regular-webfont.woff2'),
+  url('fonts/librebaskerville-regular-webfont.woff'),
+  url('fonts/LibreBaskerville-Regular.ttf')
+}
+@font-face {
+  font-family: 'Garamond';
+  src: url('fonts/ebgaramond12-regular-webfont.woff2'),
+  url('fonts/ebgaramond12-regular-webfont.woff'),
+  url('fonts/ebgaramond12-regular-webfont.ttf')
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('fonts/raleway-regular-webfont.woff2'),
+  url('fonts/raleway-regular-webfont.woff'),
+  url('fonts/Raleway-Regular.ttf')
+}
+@font-face {
+  font-family: 'Raleway-light';
+  src: url('fonts/raleway-light-webfont.woff2'),
+  url('fonts/raleway-light-webfont.woff'),
+  url('fonts/raleway-light-webfont.ttf')
+}
+.footer {
+  text-align: left;
+  padding: 2% 3%;
+  margin: 0;
+  background-color: rgba(20%,20%,20%,1);
+}
+.footertitle {
+  font-family: 'Garamond';
+  font-size: 1.4em;
+  padding: 0.4em 0 0.5em 0;
+}
+.label {
+  padding: 1em 0;
+  font-size: 1em;
+  font-family: 'Raleway-light';
+  line-height: 1em;
+  display: inline-block;
+}
+div.labeled {
+  padding: 0 0 0.4em 0;
+}
+div.labeledtext {
+  padding: 0 1.5em 0 0;
+}
+.brag {
+  padding: 0.5em 0 0 0;
+  text-align: center;
+  font-family: 'Raleway-light';
+  font-size: 0.8em;
+}
+.brag .me {
+  color: firebrick;
+}
+.msg {
+  font-size: 0.8em;
+  padding: 0 1em 0 0;
+}
+.news, .events {
+  border: none;
+  box-sizing: border-box;
+  text-align: left;
+  padding: 2% 3%;
+  margin: 0;
+  background-color: rgba(20%,20%,20%,1);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+}
+.news .title {
+  font-size: 2em;
+}
+.events {
+}
+.events .title {
+  font-size: 2em;
+}
+/* resize images */
+.container {
+  display: inline; /* not sure about this. */
+  position: relative;
+}
+.container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+}
+/* for resonsive ordering */
+div.main {
+  top: 0;
+  overflow: auto;
+  width: auto;
+  margin: 0;
+  transition: margin-left .5s;
+}
+@media only screen and (min-width: 320px) {
+  div.main {
+    padding: 0;
+  }
+  .news, .events {
+    display: block;
+  }
+  .news {
+    width: 100%;
+  }
+  .events {
+    width: 100%;
+  }
+  #previous, #next {
+    top: 5em;
+  }
+}
+@media only screen and (min-width: 480px) {
+  div.main {
+    padding: 0 5%;
+  }
+  #previous, #next {
+    top: 10em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  div.main {
+    padding: 0 10%;
+  }
+  .news, .events {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .news {
+    width: 59%;
+    margin: 0 1% 0 0;
+  }
+  .events {
+    width: 40%;
+  }
+  #previous, #next {
+    top: 15em;
+  }
+}
+@media only screen and (min-width: 992px) {
+  div.main {
+    padding: 0 15%;
+  }
+  #previous, #next {
+    top: 20em;
+  }
+}
+
+.img {
+  max-width: 100%;
+  height: auto;
+}
+.App {
+  /* */
+  position: fixed;
+  top: 0;
+  overflow: auto;
+  /* */
+  padding: 0;
+  margin: 0;
+  border: solid;
+  border-width: 1px;
+  border-color: transparent;
+}
+.App-header {
+  position: static;
+  padding: 0;
+  margin: 3em 0 1em 0;
+  color: #C8BCB3;
+}
+.App-title {
+  padding: 0.4em 0 0 0;
+  margin: 0;
+  font-size: 3.5em;
+  font-weight: 400;
+  text-align: center;
+  text-shadow: 2px 2px 5px #000;
+}
+.App-subtitle {
+
+  margin: 0;
+  font-size: 0.9em;
+  font-family: Raleway-light;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.175em;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.App-intro {
+  font-family: Garamond;
+  font-weight: 400;
+  text-align: left;
+  font-size: 1.5em;
+  letter-spacing: 0.06em;
+  line-height: 1.4em;
+  text-shadow: 2px 2px 5px #000;
+  padding: 4% 6%;
+  /*padding: 2em;*/
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+  border-radius: 0.4em 0.4em 0 0;
+  background-color: rgba(20%,20%,20%,0.8);
+}
+loadText {
+  padding: 0.4em;
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.4;
+}
+a {
+  text-decoration: none;
+}
+a:link, a:visited, a:active {
+  color: #fbefdf;
+}
+a:hover {
+  color: #aaf;
+}
+h2 {
+  color: #Eaded5;
+}
+/** Makes transparent background image per CSS Tricks. */
+div.App {
+  display: block;
+  position: absolute; /* css tricks says relative. */
+  top: 0;
+}
+div.App::after {
+  content: "";
+  background: url('mass.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; 
+}
+
+hr {
+  width: 100%;
+  border: none;
+  background-color: #c8bcb3;
+  height: 1px;
+}
+nav.topNav {
+  position: fixed;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  font-size: 1em;
+  color: #fbefdf;
+  z-index: 3;
+}
+.date {
+  color: #afafaf;
+  font-family: Raleway-light;
+  font-size: 0.8em;
+}
+.opaque {
+  background-color: rgba(100,100,100,0.8);
+}
+nav.topNav ul {
+  padding: 0 0.5em;
+  margin: 0em
+}
+nav.topNav li {
+  /*float: left;*/
+  display: inline-block;
+  padding: 0.3em 1.5em 0.3em 0;
+  margin: 0;
+  font-family: Raleway-light;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+nav.topNav:last-child li {
+  /*float: right;*/
+}
+nav.topNav .burger {
+  font-size: 1.5em;
+  font-weight: 500;
+  padding: 0.3em 0.2em 0 0;
+}
+.news, .events {
+  background: linear-gradient(#2e2e2e 5%,#1e1e1e 50%);
+}
+.menu:hover {
+  color: #daf;
+}
+.listing {
+  font-family: Raleway-light;
+  text-transform: uppercase;
+  font-size: 1em;
+  color: #88f;  
+}
+.listing:hover {
+  color: #faf;
+}
+.dropdown {
+  position:relative;
+  display:inline-block;
+}
+.dropbtn:hover {
+  color: #eaf;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  background-color: rgba(20%,20%,20%,0.9);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+  z-index: 3;
+  padding: 0.4em 0.4em 0.4em 0.6em;
+}
+.dropdown-content .menuitem {
+  padding: 0.3em;
+}
+.dropdown-content .menuitem:hover {
+  color: #faf;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+  transition: 1s; /* does nothing */
+}
+.dropdown:hover .dropbtn {
+  color: #aaf;
+}
+.picture {
+  position:relative;
+}
+#previous, #next {
+  position: absolute;
+  /* See media queries also if top removed. */
+  top: 50%;
+  z-index: 1;
+}
+#previous { left: 1em;}
+#next {
+  right: 1em;
+}
+
+.chevron.right {
+  position: relative;
+  right: 22px;
+}
+.chevron::before {
+	border-style: solid;
+  border-color: #efefef;
+	border-width: 0.5em 0.5em 0 0;
+	content: '';
+	display: inline-block;
+	height: 1em;
+	left: 0.15em;
+  position: absolute;
+	top: 0.15em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 1em;
+}
+.chevron.right:before {
+	left: 0;
+	transform: rotate(45deg);
+}
+.chevron.bottom:before {
+	top: 0;
+	transform: rotate(135deg);
+}
+.chevron.left:before {
+	left: 0.2em;
+	transform: rotate(-135deg);
+}
+.topNav .sidenav {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(0deg,#2c2c2c, #2a2a2a 20%, #2a2a2a 80%, #3e3e3e);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+  height: 100%;
+  display: none;
+}
+.sidenav div {
+  /*background: #2c2c2c;*/
+  display: block;
+  padding: 1em;
+  padding: 0.3em 1em;
+  margin: 0;
+  font-family: Raleway-light;
+  text-transform: capitalize;
+  font-size: 1em;
+  transition-property: padding, font-size;
+  transition-duration: 0.3s;
+}
+.sidenav.menuitem {
+}
+.sidenav div:hover {
+  color: #88f;
+  padding: 0.5em 0.8em;
+  font-size: 1.2em;
+}
+.sidenav {
+  /* transition: margin-right 4s ease-in-out 1s;*/
+  padding: 0.4em 0 0 0;
+}
+.modal {
+   position: fixed; /* Stay in place */
+   z-index: 4; /* Sit on top */
+   padding-top: 100px; /* Location of the box */
+   width: 100%;
+   height: 100%;
+   overflow: auto; /* Not working. Using iFrame instead. */
+   background-color: rgb(0,0,0); /* Fallback color */
+   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+  left: 20%;
+  top: 100px;
+  z-index: 5;
+  position: fixed;
+  background-color: #fefefe;
+  color: #1e1e1e;
+  margin: auto;
+  padding: 0;
+  border: solid;
+  border-width: 1px;
+  border-color: transparent;
+  border-radius: 0.4em;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  overflow: auto;
+}
+@keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:100px; opacity:1}
+}
+.closemodal {
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+span.closemodal {
+  float: right;
+  padding: 0 0 0.3em 0;
+}
+.closemodal:hover,
+.closemodal:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-body a {
+  color: rgba(0,0,255,0.6);
+}
+.modal-body a:hover {
+  color: rgba(60%,10%,90%,1)
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: gray;
+  color: white;
+  font-family: Raleway-light;
+  font-size: 1em;
+  border: transparent;
+  border-radius: 0.4em 0.4em 0 0;
+  text-transform: capitalize;
+}
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  /*padding: 2px 16px;*/
+  background-color: gray;
+  color: white;
+}
