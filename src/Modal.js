@@ -1,8 +1,5 @@
 import S from 's-js'
 import * as Surplus from 'surplus'
-//import {textStrings as txt} from './textStrings.js'
-//import {langIndex} from './langIndex.js'
-//import FetchHtmlText from './FetchHtmlText.js'
 import {displayModal} from './ModalBase.js'
 
 const close = () => {
@@ -15,7 +12,7 @@ export const modalWidth = S.data('40%')
 export default function Modal(props) {
   return (
     <div className="modal-content">
-      <div className="modal-header">
+      <div className="modal-header" onClick={close}>
         <div>{modalTitle()}
           <span onClick={close} className='closemodal'>{String.fromCharCode(215)}</span>
         </div>
