@@ -1,8 +1,5 @@
 import S from 's-js'
 import * as Surplus from 'surplus'
-import {textStrings as txt} from './textStrings.js'
-import FetchHtmlText from './FetchHtmlText.js'
-import {langIndex} from './langIndex.js'
 import MenuItem from './MenuItem.js'
 
 export default function Dropdown(props) {

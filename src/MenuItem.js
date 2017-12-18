@@ -13,7 +13,7 @@ export default function MenuItem(props) {
   let msg = txt[label]
   let html = <FetchHtmlText>{label}</FetchHtmlText>
   let clickme = () => {
-    if(window.screen.width > 768) {
+    if(window.screen.width > 760) {
       modalWidth(size)
     } else {
       modalWidth('98%')

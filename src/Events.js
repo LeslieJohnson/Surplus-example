@@ -10,7 +10,7 @@ export default function Events(props) {
       <div>
         <span className='title'>{txt.events[langIndex()]}</span>
         <hr/>
-        <List type='events' inx={langIndex()}></List>
+        <List type='events'></List>
       </div>
     </div>
   )

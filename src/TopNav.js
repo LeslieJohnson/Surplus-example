@@ -1,7 +1,6 @@
 import S from 's-js'
 import * as Surplus from 'surplus'
 import {textStrings as txt} from './textStrings.js'
-import FetchHtmlText from './FetchHtmlText.js'
 import {langIndex, toggleLang} from './langIndex.js'
 import Dropdown from './Dropdown.js'
 import SideNav from './SideNav.js'
@@ -17,19 +16,29 @@ window.addEventListener('scroll',() => {
     document.getElementsByClassName('topNav')[0].className='topNav'
   }
 })
-const openSide = () => {
+const openSide = () => { // Opens the SideNav menu, via the hamburger button.
   displayState('block')
 }
-export default function TopNav(props) {
-  return <nav className='topNav'>
+const toggle = () => {
+  displayState() == 'block' ? displayState('none') : displayState('block')
+}
+/**
+   TopNav is fixed at the top of the page, so it also acts an an anchor to Components that don't
+   scroll with the rest of the page content.
+ */
+export default function TopNav() {
+  return (<nav className='topNav'>
+    {/* Horizontal menu, starting with the hamburger 'button'. */}
     <ul>
-      <span className='menu' onClick={openSide}>
+      <span className='menu' onClick={toggle}>
         <li className='burger dropbtn' >☰</li>
         <li>{txt.menu[langIndex()]}<Dropdown></Dropdown></li>
       </span>
       <li>
+        {/* Dropdown children invoke modals on selection. */}
         <Dropdown name={txt.masstimes[langIndex()]}>
-          <content size='50%'>sundaymass</content>
+          {/* size is width of modal invoked. Mobile displays override. */}
+          <content size='50%'>sundaymass</content>  
           <content size='50%'>weekdaymass</content>
         </Dropdown>
       </li>
@@ -39,9 +48,12 @@ export default function TopNav(props) {
           <content size='60%'>aboutLeo</content>
         </Dropdown>
       </li>
-      <li className='dropbtn' onClick={toggleLang}>{txt.language[langIndex()]}</li>
+      {/* This toggles the entire site's language content. It's always displayed. */}
+      <li className='dropbtn' title={txt.toggle[langIndex()]} onClick={toggleLang}>{txt.language[langIndex()]}</li>
     </ul>
+    {/* SideNav menubar is hidden until invoked. */}
     <SideNav></SideNav>
-    <ModalBase className='modal'></ModalBase>
-  </nav>
+    {/* Hidden until invoked. ModalBase is here for display fixed anchor point. */}
+    <ModalBase className='modal'></ModalBase> 
+  </nav>)
 }

@@ -8,6 +8,9 @@ export const textStrings = {
   language: ['Español', // Order is backwards for language toggle button.
              'English'
   ],
+  toggle: ['para Español',
+           'Change language to English'
+  ],
 	map: ['Map',
         'Mapa'
   ],
@@ -56,7 +59,7 @@ export const textStrings = {
                'Misa Domingo'
   ],
 	weekdaymass: ['Weekday Mass',
-                'Misas entre semana'
+                'Misas Daria'
   ],
 	adoration: ['Adoration',
               'Adoración'
@@ -65,10 +68,10 @@ export const textStrings = {
                'Confesión'
   ],
   firstfriday: ['First Friday/Saturday Devotions',
-                ''],
+                'Primer viernes / sábado Devociones'],
   firstsaturday: ['First Saturday',''],
-  knights: ['Knights of the Altar',''],
-  maidens: ['Maidens of the Altar',''],
+  knights: ['Knights of the Altar','Caballeros del Altar'],
+  maidens: ['Maidens of the Altar','Doncellas del Altar'],
 	rosary: ['Rosary',
            'Rosario'
   ],
@@ -117,7 +120,7 @@ export const textStrings = {
   events: ['Upcoming Events','Próximos Eventos'
   ],
 	gift: ['Your Gift to God (Collections)',
-         'Su Regalo de Dios'
+         'Su Ofrenda a Dios'
   ],
 	citizens: ['We Are Catholic Citizens',
              'Somos Ciudadanos Católicos'

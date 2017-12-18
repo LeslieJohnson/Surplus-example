@@ -9,7 +9,7 @@ export const modalTitle = S.data('')
 export const modalMsg = S.data('')
 export const modalWidth = S.data('40%')
 
-export default function Modal(props) {
+export default () => {
   return (
     <div className="modal-content">
       <div className="modal-header" onClick={close}>

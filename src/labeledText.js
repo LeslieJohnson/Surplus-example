@@ -10,5 +10,5 @@ export const labeledText = {
           'Tues-Fri: 9:00 AM - 5:00 PM<br/>&nbsp;',
           'Martes-Viernes: 9:00 AM - 5:00 PM<br/>&nbsp;'],
   email: ['Email','Email','info@stleocenterville.org<br/>&nbsp;','info@stleocenterville.org<br/>&nbsp;'],
-  admin: ['Administrator','','Rev. Kevin Young<br/>kyoungfssp@gmail.com','Rev. Kevin Young<br/>kyoungfssp@gmail.com']
+  admin: ['Administrator','Administrador','Rev. Kevin Young<br/>kyoungfssp@gmail.com','Rev. Kevin Young<br/>kyoungfssp@gmail.com']
 }

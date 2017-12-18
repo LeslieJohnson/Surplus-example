@@ -24,7 +24,7 @@ export default function Footer(props) {
       <div className='label'>
         <GetLabeledText>email</GetLabeledText>
       </div>
-      <div className='brag'>powered by <i className='me'>Les </i> (bithits@gmail.com)</div>
+      <div className='brag'>powered by <span className='me'>Les </span> (bithits@gmail.com)</div>
     </div>
   )
 }
