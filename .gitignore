@@ -1,8 +1,14 @@
+.gitignore
 node_modules/
 public/fonts
 public/gallery
 public/ES
 public/EN
 public/bundle.js
+public/gallery
 todo.org
+doc/*.adoc
+doc/*.html
+doc/*.pdf
+doc/src
 *.old
