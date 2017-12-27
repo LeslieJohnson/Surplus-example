@@ -1,0 +1,21 @@
+exports.str = {
+  fund1: ['general fund','fondo general'],
+  fund2: ['building fund','fondo de construcción'],
+  fund3: ['christmas flowers','christmas flowers'],
+  fund4: ['Maidens','Doncellas'],
+  fund5: ['Tamales','Tamales'],
+  fund6: ['',''],
+  money1: "$1,368.00",
+  money2: "$150.00",
+  money3: "$140.00",
+  money4: "$194.00",
+  money5: "$1,188.00",
+  money6: "",
+  sum: "$3,040.00",
+  gift: ['your gift to god','Su Regalo de Dios'],
+  thanks: ['thank you for your generosity!','¡Gracias por tu generosidad!'],
+  next: ['',
+         ''],
+  total: ['total','total'],
+  lang: ['en','es']
+}

@@ -1,7 +1,6 @@
 import S from 's-js'
 import * as Surplus from 'surplus'
 import {textStrings as txt} from './textStrings.js'
-import {langIndex} from './langIndex.js'
 import GetLabeledText from './GetLabeledText.js'
 import {labeledText as lt} from './labeledText.js'
 

@@ -11,7 +11,6 @@ export default function ModalBase() {
   node.focus()
   node.style.width=modalWidth()
   node.style.display=displayModal()
-  //console.log('display state: ',node.style.display)
   return(
     node
   )

@@ -22,9 +22,10 @@ const openSide = () => { // Opens the SideNav menu, via the hamburger button.
 const toggle = () => {
   displayState() == 'block' ? displayState('none') : displayState('block')
 }
-/**
-   TopNav is fixed at the top of the page, so it also acts an an anchor to Components that don't
-   scroll with the rest of the page content.
+/** TopNav is fixed at the top of the page, so it acts an an anchor to
+   Components that don't scroll with the rest of the page content. So
+   it has a dual purpose, the other being to provide dropdown menus,
+   as provided by its child component Dropdown with parameters and children.  
  */
 export default function TopNav() {
   return (<nav className='topNav'>
@@ -37,7 +38,8 @@ export default function TopNav() {
       <li>
         {/* Dropdown children invoke modals on selection. */}
         <Dropdown name={txt.masstimes[langIndex()]}>
-          {/* size is width of modal invoked. Mobile displays override. */}
+          {/* size is the width of the modal invoked. Mobile displays will
+              override this value in Listings.js and MenuItem.js */}
           <content size='50%'>sundaymass</content>  
           <content size='50%'>weekdaymass</content>
         </Dropdown>
