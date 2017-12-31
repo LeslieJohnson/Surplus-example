@@ -19,7 +19,7 @@ window.addEventListener('scroll',() => {
 const openSide = () => { // Opens the SideNav menu, via the hamburger button.
   displayState('block')
 }
-const toggle = () => {
+const toggleSide = () => {
   displayState() == 'block' ? displayState('none') : displayState('block')
 }
 /** TopNav is fixed at the top of the page, so it acts an an anchor to
@@ -31,7 +31,7 @@ export default function TopNav() {
   return (<nav className='topNav'>
     {/* Horizontal menu, starting with the hamburger 'button'. */}
     <ul>
-      <span className='menu' onClick={toggle}>
+      <span className='menu' onClick={toggleSide}>
         <li className='burger dropbtn' >☰</li>
         <li>{txt.menu[langIndex()]}<Dropdown></Dropdown></li>
       </span>
