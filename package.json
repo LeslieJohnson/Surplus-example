@@ -1,12 +1,12 @@
 {
-  "name": "stodos",
+  "name": "stleo",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Leslie Johnson bithits@gmail.com",
   "license": "ISC",
   "dependencies": {
     "most": "^1.7.2",
