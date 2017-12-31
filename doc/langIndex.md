@@ -1,10 +1,10 @@
 ## langIndex.js
-This is used by every component that displays text in more than one
+This monad is used by every component that displays text in more than one
 language. The `langIndex` data stream provides an index into text
 arrays. When it changes, all displayed text changes too. Magic! Well,
 `S` data binding magic anyway.
 
-TIP: Compare this to `React` Component's `setState()`. With React,
+IMPORTANT: Compare this to `React` Component's `setState()`. With React,
 each component has its own state, and its child components only update
 theirs if `forceUpdate` is passed to `setState`. Here, any component
 can use `langIndex` simply by importing it. `S` takes care of the data

@@ -1,7 +1,6 @@
-:toc: left
 
 # Responsive Web App with Surplus
-React is good. Surplus is better, faster and easier.
+React is good. Surplus is better, faster and easier to use.
 
 ## Intro
 
@@ -22,8 +21,7 @@ annotations. It's not a demo, but a real working app.
 It's *not* an `S` tutorial, but shows the power of `S` for tracking
 and updating data bindings in the DOM, and `Surplus` as a component
 framework. Take a look at [S](https://github.com/adamhaile/S) and
-[Surplus](https://github.com/adamhaile/surplus) on Github to see how
-they work.
+[Surplus](https://github.com/adamhaile/surplus) on Github.
 
 ## S and Surplus
 
@@ -98,6 +96,12 @@ langIndex(1) // DOM updates, now displays 'hola mundo'
 TIP: Notice the C-style comment inside braces. This is how to
 put comments within JSX, and is not Surplus-specific.
 
+`langIndex` is a monad used to get (and change) the language index
+dynamically throughout the app. When it's used inside a component or
+element, `S` adds the element as a subscriber internally. When the
+value inside the monad changes, each subscriber is notified and the
+element is updated. This is the \‘reactive\’ part of the app.
+
 Changing this index results in another text string *in every DOM
 element* that uses that index to get a string value. This can be a
 text node, a `CSS` class value, an `href` string or anything else. My
@@ -124,11 +128,10 @@ using the string array indexes described above, plus separate content
 files. The live version can be seen at
 [stleocenterville.org](http://stleocenterville.org).
 
-Because I'm the only developer, design decisions and code are mine
-alone. The server is from Network Solutions, which doesn't run `node`,
-so all code runs on the client. I wanted a public-facing open source
-app for others to use and for me to show as an example of my work, and
-as the basis for this document.
+I'm the only developer. The server is from Network Solutions, which
+doesn't run `node`, so all code runs on the client. I wanted a
+public-facing open source app to demonstrate `S` and `Surplus`, and
+to show as an example of my work.
 
 It's pretty basic, with standard dropdown menus, a sidenav bar,
 headers, footers, modals, event calendar and a picture
@@ -143,8 +146,13 @@ a lot of effort on this, but details about it are outside of the scope
 of this work. 
 
 ## Development environment
-I'm a command line kind of guy, and Emacs is my IDE. Emacs does
-everything an IDE does if it's setup right.
+
+I use standard JavaScript developer tools, like `git`, `npm`, `webpack`
+with `babel` and others. The `package.json` and `webpack.config.js`
+should look familiar to any modern developer.
+
+Emacs is my IDE. Emacs does everything an IDE does if it's setup
+right.
 
 TIP: Get the `web-mode` Emacs package and use it for `html, js, jsx,
 css` files along with `aggressive-indent-mode`. They both understand mixed
@@ -153,19 +161,27 @@ have automatic indenting and formatting, syntax highlighting and error
 checking all on the fly. Check out `emmet-mode` too for shortcut tag generation in
 JSX and HTML.
 
-I use common JavaScript developer tools, like `git`, `npm`, `webpack` with
-`babel` and others. The
-`package.json` and `webpack.config.js` should look familiar to any
-modern developer.
+I use Arch Linux on a Lenovo W520. I also have a MacBook Pro, which my
+wife says I can use after I pry it from her cold, dead fingers, but
+she tests my stuff with it along with her iPhone, iPad, etc. I've been using Linux
+since before kernel version 1.0 when Linus Torvalds was still a grad
+student and `usenet` was the thing. Unix before that.
 
-I use Arch Linux on a Lenovo W520. I also have a MacBook Pro, which
-my wife says I can use after I **pry it from her cold, dead
-fingers**. I've been using Linux since before kernel version 1.0 when
-Linus Torvalds was still a grad student in Finland and `usenet` was
-the thing. Unix before that.
+NOTE: I'm not a Windows developer, and development using `node`
+command line tools on Windows is not my *forte*. Google and Stack
+Overflow should help if you ~~are forced to use~~ prefer Windows for
+development.
 
-NOTE: I'm not a Windows user. Development using `node` command line tools on
-Windows can be done, but it's tricky. I only describe what works for me.
+# Source Code
+
+## index.html
+The root node is appended to the document body in a minimal `index.html`,
+which also sources `bundle.js` and `App.css`. Webpack and babel with plugins and
+presets create `bundle.js` from all JavaScript in the app, compressed.
+
+```html
+include::../public/index.html[]
+```
 
 # Modules
 

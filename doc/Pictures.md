@@ -11,7 +11,7 @@ export const filelist = [
     ...
 ]
 ```
-These image files are in the `gallery` directory. The code looks for
+These image files are in the `gallery` directory on the server. The code looks for
 file names in this filelist, and finds them in the directory. As image
 files are added, the filelist object must be edited manually, because
 JavaScript browser clients can't read the server's filesystem directory to
@@ -37,7 +37,7 @@ contain the images for display.
 
 `nextPic()` and `prevPic()` functions select a new picture as the user
 cycles through the `filelist` array by clicking on chevrons or swiping
-(on touch-sensitive devices). The `picIndex()` cycles through the array
+on touch-sensitive devices. The `picIndex()` cycles through the array
 to make it seem circular to the user.
 
 NOTE: Properties on Surplus nodes may be added and modified, as in
@@ -50,8 +50,8 @@ asynchronously in the background.
 
 The user can only select the previous or next image, as
 there is no option for random selection. Prefetching these two images
-makes sense. The users could easily outrun the prefetch, but I
-assume that they will spend enough time looking at the selected pic to
+makes sense. The users could easily outrun the prefetch, but 
+hopefully they will spend enough time looking at the selected pic to
 allow the prefetch to catch up.
 
 NOTE: Outrunning the prefetch doesn’t hurt, but clicking or swiping has no effect until the image is loaded.
@@ -81,10 +81,10 @@ because that's how promises work. This allows the operation to work in
 the background, asynchronously.
 
 When the page first loads, the user hasn't yet selected an image, so
-nothing would be displayed. We need to initialze our three image
-nodes. The `current` image is loaded first, followed by the other two
-so that the user only has to wait for the first to see an image on
-startup.
+nothing would be displayed without initialization. We initialize our
+three image nodes. The `current` image is loaded first, followed by
+the other two so that the user only has to wait for the first to see
+an image on startup.
 
 ### Swipe
 For devices that support touch events, swiping to select previous and
@@ -123,9 +123,9 @@ TIP: Always try to understand at least one level of abstraction below
 the one you're using. This is true for all software development.
 
 With Surplus (and other JSX implementations) this is done by creating
-a JavaScript variable and assigning a DOM node to it, like so:
+a JavaScript variable and assigning a Surplus node to it, like so:
 ```jsx
-let foo = <div></div>
+let foo = <div/>
 foo.addEventListener(...)
 ```
 So `foo` can invoke the `addEventListener()` function while a
