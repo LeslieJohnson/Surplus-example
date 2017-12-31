@@ -26,6 +26,6 @@ do
     #echo $start
     sed -i '1s/^/:doctype: book\n:source-highlighter: rouge\n:icons: font\n:docinfo1:\n:toc: left\n/' $name.adoc
     asciidoctor $name.adoc
-    asciidoctor-pdf -a source-highlighter=rouge -a rouge-theme=$theme $name.adoc
+    #asciidoctor-pdf -a source-highlighter=rouge -a rouge-theme=$theme $name.adoc
 done
 
