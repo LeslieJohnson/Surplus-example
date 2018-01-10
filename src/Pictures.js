@@ -21,7 +21,6 @@ let nextPic = () => {
   if(next.src) {
     previous.src = current.src // current pic becomes previous pic
     current.src = next.src
-    next = <img/>
   } else {
     fetchPic('./gallery/'+filelist[picIndex()],current)
   }
@@ -35,7 +34,6 @@ let prevPic = () => {
   if(previous.src) {
     next.src = current.src
     current.src = previous.src
-    previous = <img/>
   } else {
     fetchPic('./gallery/'+filelist[picIndex()],current)
   }
