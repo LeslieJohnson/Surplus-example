@@ -17,13 +17,8 @@ current.position = 'absolute'
 // Hander for right chevron or right swipe.
 let nextPic = () => {
   picIndex()  >= filelist.length-1 ? picIndex(0): picIndex(picIndex()+1);
-  // If we have a pre-fetched img, use it. Else, fetch one.
-  if(next.src) {
-    previous.src = current.src // current pic becomes previous pic
-    current.src = next.src
-  } else {
-    fetchPic('./gallery/'+filelist[picIndex()],current)
-  }
+  previous.src = current.src
+  current.src = next.src
   nextIndex(picIndex() >= filelist.length-1 ? 0 : picIndex()+1)
   // prefetch next pic
   fetchPic('./gallery/'+filelist[nextIndex()],next)
@@ -31,12 +26,8 @@ let nextPic = () => {
 // Handler for left click or swipe.
 let prevPic = () => {
   picIndex()  <= 0 ? picIndex(filelist.length-1): picIndex(picIndex()-1);
-  if(previous.src) {
-    next.src = current.src
-    current.src = previous.src
-  } else {
-    fetchPic('./gallery/'+filelist[picIndex()],current)
-  }
+  next.src = current.src
+  current.src = previous.src
   prevIndex( picIndex() <= 0 ? filelist.length-1 : picIndex()-1)
   fetchPic('./gallery/'+filelist[prevIndex()],previous)
 }
