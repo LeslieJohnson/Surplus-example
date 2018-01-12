@@ -6,7 +6,7 @@ export const displayState = S.data('none')
 const close = () => {
   displayState('none')
 }
-export default function SideNav(props) {
+export default function SideNav() {
   let myside = <div className='sidenav'>
   <div></div>
 

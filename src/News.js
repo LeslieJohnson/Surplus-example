@@ -4,7 +4,7 @@ import {textStrings as txt} from './textStrings.js'
 import Listings from './Listings.js'
 import {langIndex} from './langIndex.js'
 
-export default function News(props) {
+export default function News() {
   return(
     <div className='news'>
       <div>
