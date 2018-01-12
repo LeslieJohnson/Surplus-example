@@ -191,7 +191,7 @@ grad student and `usenet` was the thing. Unix before that.
 
 NOTE: I’m not a Windows developer, and development using `node` command
 line tools on Windows is not my specialty. Google and StackOverflow
-should help if you [line-through]*are forced to use* prefer Windows for
+should help if you prefer Windows for
 development.
 
 [[source-code]]
@@ -207,7 +207,7 @@ the app, compressed.
 
 [source,html]
 ----
-include::../public/index.html[]
+include::public/index.html[]
 ----
 
 [[modules]]
