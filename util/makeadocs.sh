@@ -17,15 +17,13 @@ do
         mid=$'\n----\ninclude::src/'
         end=$'\n----\n'
         echo "$start.${name}.js$tag$mid${name}.js[]$end" >>$name.adoc
-    else
-        tag=''
-        start=''
-        mid=''
-        end='' 
     fi
     #echo $start
     sed -i '1s/^/:doctype: book\n:source-highlighter: rouge\n:icons: font\n:docinfo1:\n:toc: left\n/' $name.adoc
     asciidoctor $name.adoc
     #asciidoctor-pdf -a source-highlighter=rouge -a rouge-theme=$theme $name.adoc
 done
-
+# Run main file a second time to update link references.
+pandoc -s --atx-headers -t asciidoc -o index.adoc index.md
+sed -i '1s/^/:doctype: book\n:source-highlighter: rouge\n:icons: font\n:docinfo1:\n:toc: left\n/' index.adoc
+asciidoctor index.adoc
