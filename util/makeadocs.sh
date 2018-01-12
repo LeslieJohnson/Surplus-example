@@ -12,11 +12,12 @@ do
     pandoc -s --atx-headers -t asciidoc -o $name.adoc $i
     if [ "${name}" != "index" ]
     then
+        src=$(<src/$name.js)
         tag=$'\n[source,jsx,numbered]'
         start=$'\n=== Source\n\n'
-        mid=$'\n----\ninclude::src/'
+        mid=$'\n----\n'"$src"
         end=$'\n----\n'
-        echo "$start.${name}.js$tag$mid${name}.js[]$end" >>$name.adoc
+        echo "$start.${name}.js$tag$mid$end" >>$name.adoc
     fi
     #echo $start
     sed -i '1s/^/:doctype: book\n:source-highlighter: rouge\n:icons: font\n:docinfo1:\n:toc: left\n/' $name.adoc
