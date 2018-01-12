@@ -4,7 +4,7 @@
 App is the entry point and does little else other than import
 component modules, and create an `S` root node. The components and
 their ordering create the main display page, which in this Single Page
-Application is the whole app.
+Application is the whole app (most of which is hidden at this point).
 
 
 ### Modules and Components
