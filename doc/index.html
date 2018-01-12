@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.6.1">
+<title>Responsive Web App with Surplus</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Remove comment around @import statement below when using as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+script{display:none!important}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+a{background:transparent}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.spread{width:100%}
+p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:none}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #ddddd8;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite:before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media only screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7;font-weight:bold}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
+.clearfix:after,.float-group:after{clear:both}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
+pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
+b.button:before{content:"[";padding:0 3px 0 2px}
+b.button:after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header:before,#header:after,#content:before,#content:after,#footnotes:before,#footnotes:after,#footer:before,#footer:after{content:" ";display:table}
+#header:after,#content:after,#footnotes:after,#footer:after{clear:both}
+#content{margin-top:1.25em}
+#content:before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
+#header .details{border-bottom:1px solid #ddddd8;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span:before{content:"\00a0\2013\00a0"}
+#header .details br+span.author:before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark:before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber:after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media only screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+.sect1{padding-bottom:.625em}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
+.sect1+.sect1{border-top:1px solid #efefed}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
+.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:initial}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock pre:not(.highlight),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre.CodeRay,.listingblock pre.prettyprint{background:#f7f7f8}
+.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
+.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
+.literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]:before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]:before{display:block}
+.listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
+.listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
+table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
+table.pyhltable td.code{padding-left:.75em;padding-right:0}
+pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
+pre.pygments .lineno{display:inline-block;margin-right:.25em}
+table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
+.quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
+.quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
+.quoteblock .quoteblock blockquote:before{display:none}
+.verseblock{margin:0 1em 1.25em 1em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract{margin:0 0 1.25em 0;display:block}
+.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
+.quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
+table.tableblock{max-width:100%;border-collapse:separate}
+table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px 0}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot{border-width:1px 0}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+td>div.verse{white-space:pre}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
+ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
+ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
+ul.inline>li>*{display:block}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist>table tr>td:first-of-type{padding:.4em .75em 0 .75em;line-height:1;vertical-align:top}
+.colist>table tr>td:first-of-type img{max-width:initial}
+.colist>table tr>td:last-of-type{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
+.imageblock.right,.imageblock[style*="float: right"]{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background-color:#00fafa}
+.black{color:#000}
+.black-background{background-color:#000}
+.blue{color:#0000bf}
+.blue-background{background-color:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background-color:#fa00fa}
+.gray{color:#606060}
+.gray-background{background-color:#7d7d7d}
+.green{color:#006000}
+.green-background{background-color:#007d00}
+.lime{color:#00bf00}
+.lime-background{background-color:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background-color:#7d0000}
+.navy{color:#000060}
+.navy-background{background-color:#00007d}
+.olive{color:#606000}
+.olive-background{background-color:#7d7d00}
+.purple{color:#600060}
+.purple-background{background-color:#7d007d}
+.red{color:#bf0000}
+.red-background{background-color:#fa0000}
+.silver{color:#909090}
+.silver-background{background-color:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background-color:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background-color:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background-color:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]:after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@media print{@page{margin:1.25cm .75cm}
+*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]:after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+.sect1{padding-bottom:0!important}
+.sect1+.sect1{border:0!important}
+#header>h1:first-child{margin-top:1.25rem}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span:before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]:before{display:block}
+#footer{background:none!important;padding:0 .9375em}
+#footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link href="prism/prism.css" rel="stylesheet" />
+<style>
+ /* Override Asciidoctor CSS to get the correct background */
+  .listingblock pre[class^="highlight "] {
+    background: #272822;
+ }
+</style>
+</head>
+<body id="responsive-web-app-with-surplus" class="book toc2 toc-left">
+<div id="header">
+<h1>Responsive Web App with Surplus</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#intro">Intro</a></li>
+<li><a href="#s-and-surplus">S and Surplus</a>
+<ul class="sectlevel2">
+<li><a href="#s.js">S.js</a></li>
+<li><a href="#surplus">Surplus</a></li>
+</ul>
+</li>
+<li><a href="#hello-world---hola-mundo">Hello World &#8594; Hola Mundo</a></li>
+<li><a href="#what-is-this-app">What is this App?</a></li>
+<li><a href="#development-environment">Development environment</a></li>
+<li><a href="#source-code">Source Code</a>
+<ul class="sectlevel1">
+<li><a href="#index.html">index.html</a></li>
+</ul>
+</li>
+<li><a href="#modules">Modules</a>
+<ul class="sectlevel1">
+<li><a href="#app.js">App.js</a>
+<ul class="sectlevel2">
+<li><a href="#modules-and-components">Modules and Components</a></li>
+<li><a href="#_source">Source</a></li>
+</ul>
+</li>
+<li><a href="#langindex.js">langIndex.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_2">Source</a></li>
+</ul>
+</li>
+<li><a href="#topnav.js">TopNav.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_3">Source</a></li>
+</ul>
+</li>
+<li><a href="#dropdown.js">Dropdown.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_4">Source</a></li>
+</ul>
+</li>
+<li><a href="#menuitem.js">MenuItem.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_5">Source</a></li>
+</ul>
+</li>
+<li><a href="#modalbase.js">ModalBase.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_6">Source</a></li>
+</ul>
+</li>
+<li><a href="#modal.js">Modal.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_7">Source</a></li>
+</ul>
+</li>
+<li><a href="#sidenav.js">SideNav.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_8">Source</a></li>
+</ul>
+</li>
+<li><a href="#header.js">Header.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_9">Source</a></li>
+</ul>
+</li>
+<li><a href="#intro.js">Intro.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_10">Source</a></li>
+</ul>
+</li>
+<li><a href="#fetchhtmltext.js">FetchHtmlText.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_11">Source</a></li>
+</ul>
+</li>
+<li><a href="#pictures.js">Pictures.js</a>
+<ul class="sectlevel2">
+<li><a href="#the-image-files">The image files</a></li>
+<li><a href="#displaying-an-image-the-easy-way">Displaying an image the easy way</a></li>
+<li><a href="#prefetching-images">Prefetching images</a></li>
+<li><a href="#swipe">Swipe</a></li>
+<li><a href="#attaching-the-touch-event-handler">Attaching the touch event handler</a></li>
+<li><a href="#_source_12">Source</a></li>
+</ul>
+</li>
+<li><a href="#news.js">News.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_13">Source</a></li>
+</ul>
+</li>
+<li><a href="#events.js">Events.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_14">Source</a></li>
+</ul>
+</li>
+<li><a href="#listings.js">Listings.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_15">Source</a></li>
+</ul>
+</li>
+<li><a href="#footer.js">Footer.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_16">Source</a></li>
+</ul>
+</li>
+<li><a href="#getlabeledtext.js">GetLabeledText.js</a>
+<ul class="sectlevel2">
+<li><a href="#_source_17">Source</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>React is good. Surplus is better, faster and easier to use.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intro">Intro</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a JavaScript webapp using Surplus and S as a development
+framework with no other libraries or platforms. It’s modular with purely
+functional components. No classes, and no <code>this</code> or <code>new</code> anywhere. It’s
+all built from scratch.</p>
+</div>
+<div class="paragraph">
+<p>This small app is not just a demo, but a working SPA with complete
+documentation and source code. It has asynchronous resource loading,
+image prefetch and cache, touch event handling and dynamic bilingual
+language selection for all menus and text across the app.</p>
+</div>
+<div class="paragraph">
+<p>My goal was to make a simple, fast and mobile-friendly reactive app
+without any server code. The result is 226 lines of source code,
+(including comments, minus text files), in 15 ES6 modules. After
+compression, the app bundle is about 25K, not gzipped.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It’s <em>not</em> an <code>S</code> tutorial, but shows the power of <code>S</code> for
+tracking and updating data bindings in the DOM, and <code>Surplus</code> as a
+component framework. Take a look at <a href="https://github.com/adamhaile/S">S</a>
+and <a href="https://github.com/adamhaile/surplus">Surplus</a> on Github.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="s-and-surplus">S and Surplus</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://github.com/adamhaile/S">S</a> and
+<a href="https://github.com/adamhaile/surplus">Surplus</a> are written by Adam Haile,
+and are separate projects on Github that work together.</p>
+</div>
+<div class="paragraph">
+<p><code>S</code> (aka S.js) is for reactive programming in JavaScript. When data
+changes, “S automatically updates downstream computations” says the
+Github page.</p>
+</div>
+<div class="paragraph">
+<p><code>Surplus</code> adds JSX web views to <code>S</code> applications, according to its docs.
+To me, it looks like a less complex <code>React</code> with better functionality
+and can be a first-rate development framework.</p>
+</div>
+<div class="sect2">
+<h3 id="s.js">S.js</h3>
+<div class="paragraph">
+<p>The idea behind <code>S</code> is wonderfully simple. There is no virtual DOM, but
+data changes are tracked and the <em>real</em> DOM is updated accordingly. <code>S</code>
+implements data binding with functions that use data signals, rather
+than using variables. When a value is changed, signals are sent to all
+components that depend on the value and are automatically updated.</p>
+</div>
+<div class="paragraph">
+<p>This is a big deal because it greatly simplifies building and
+understanding an app. Component lifecycles are gone. No
+mounting/unmounting of components, because there is nothing to mount.
+It’s just the DOM. It’s like <code>React</code> with a <em>whole unnecessary middle
+layer removed</em> and replaced with something better.</p>
+</div>
+<div class="paragraph">
+<p>Troubleshooting using the Chrome debugger is easier, because there’s no
+magic between what the debugger sees and the DOM. There are no synthetic
+events or component lifecycle changes. All components can be purely
+functional.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="surplus">Surplus</h3>
+<div class="paragraph">
+<p><code>Surplus</code> uses JSX to create Components that use <code>S</code>, and has
+React-friendly keyword aliases and conventions. This is another big plus
+for learning and portability. It’s a React lookalike, but <em>not</em> a
+workalike. Load times are quick (important for mobile), memory footprint
+is small and it consistently runs the fastest
+<a href="https://github.com/krausest/js-framework-benchmark">benchmarks</a> of any
+platform.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hello-world---hola-mundo">Hello World &#8594; Hola Mundo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are nine <code>S.data()</code> functions in the app, used for modal and
+navbar display states, indexes into data arrays, file names, and <code>CSS</code>
+property values. When a new value (data signal) is passed to one of
+these functions, <code>S</code> data binding updates any DOM properties that depend
+on them, in all components.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This example (and this whole app) barely hints at the
+computational power of <code>S</code>. Using <code>S</code> to update elements by referencing
+a single value is as simple as can be.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For example, one <code>S.data()</code> value is used to index into dozens of
+JavaScript arrays that contain text strings like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">const langIndex = S.data(0) // S returns a function initialized to 0
+console.log(langIndex()) // 0 &lt;- returns its value if no parameter passed.
+const someText = ['hello ','hola ']
+const otherText = ['world','mundo']
+// JSX div displays text from array.
+&lt;div&gt;
+  {someText[langIndex()]} {/* 0 index == 'hello '*/}
+  {otherText[langIndex()]} {/* 'world' */}
+&lt;/div&gt; // div element's text node is 'hello world'
+...
+langIndex(1) // DOM updates, now displays 'hola mundo'</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Notice the C-style comment inside braces. This is a way to put
+comments within JSX, and is not Surplus-specific.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>langIndex</code> is a monad used to get (and change) the language index
+dynamically throughout the app. Wherever it’s used inside a component or
+element, <code>S</code> adds the element as a subscriber internally. When the value
+inside the monad changes, each subscriber is notified and the element is
+updated. This is the ‘reactive’ part of the app.</p>
+</div>
+<div class="paragraph">
+<p>Changing this index results in an display update <em>in every DOM element</em>
+that uses the index to get a string value. This can be a text node, a
+<code>CSS</code> class value, an <code>href</code> string or anything else. My trivial example
+shows one <code>div</code>, but if a hundred elements depended on this index, they
+would all change. The <code>langIndex()</code> is <code>S</code>, and the <code>div</code> in JSX is
+<code>Surplus</code>.</p>
+</div>
+<div class="paragraph">
+<p>Because there is no virtual DOM, there are no Component Lifecycles, and
+no Synthetic Events. There <em>are</em> Components that, like React, start with
+a capital letter. For compatibility with React, keywords like
+<code>className</code> and <code>onClick</code> are aliased, but need not be. <code>props</code> are
+passed in the same way as React. Native DOM event handlers, classes,
+properties etc. work with <code>Surplus</code> components seamlessly.</p>
+</div>
+<div class="paragraph">
+<p><code>Surplus</code> components look like the pure functional components in <code>React</code>
+and <code>Inferno</code>. <code>JSX</code> is a standard separate from <code>React</code>, and <code>Surplus</code>
+follows the standard.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="what-is-this-app">What is this App?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It’s a website for my local Catholic church. The users like up-to-date
+status and info, and pictures of events. Half of the parish speak
+Spanish, so every label, message, dropdown, menu, etc. is bilingual
+using the string array indexes described above, plus separate content
+files. The live version can be seen at
+<a href="http://stleocenterville.org">stleocenterville.org</a>.</p>
+</div>
+<div class="paragraph">
+<p>I inherited a Network Solutions server which doesn’t run <code>node</code>, so all
+code runs on the client. I wanted to provide a website for the parish,
+to demonstrate <code>S</code> and <code>Surplus</code>, and have a public-facing open source
+app as an example of my work. It’s a successor to a previous version I
+wrote using <code>AngularJS</code>, and I started this version’s development using
+<code>React</code>, then <code>Inferno</code>, then <code>Surplus</code>.</p>
+</div>
+<div class="paragraph">
+<p>It has standard dropdown menus, a sidenav bar, header, footer, modals,
+event calendar and a picture slideshow. There are 15 Components, each in
+a separate ES6 module. Other JavaScript files have text data and there
+is a directory in each language for html and text content files. A
+<code>gallery</code> directory has <code>jpg</code> pictures. A <code>util</code> directory has some
+helper scripts for generating <code>html</code> files from templates, and for
+building this document from Markdown files in the <code>doc</code> directory.</p>
+</div>
+<div class="paragraph">
+<p><code>App.css</code> was written by me from scratch, except where noted. Much of my
+effort went into this, but details are outside of the scope of this
+document.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="development-environment">Development environment</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I use standard command line and scripted JavaScript developer tools,
+like <code>git</code>, <code>npm</code>, <code>webpack</code> with <code>babel</code>, <code>bash</code> and others. The
+<code>package.json</code> and <code>webpack.config.js</code> should look familiar to any
+modern developer.</p>
+</div>
+<div class="paragraph">
+<p>Emacs is my IDE. Emacs does everything an IDE does if it’s setup right.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+I use the <code>web-mode</code> Emacs package for <code>html, js, jsx, css</code> files
+along with <code>aggressive-indent-mode</code>. They both understand mixed modes
+like embedded JSX and CSS in HTML. Add <code>fly-check</code>, and you’ll have
+automatic indenting and formatting, syntax highlighting and error
+checking all on the fly. Check out <code>emmet-mode</code> too for shortcut tag
+generation in JSX and HTML.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>I use Arch Linux on a Lenovo W520. I also have a MacBook Pro, which my
+wife says I can use after I pry it from her cold, dead fingers, but she
+tests my stuff with it along with her iPhone, iPad, etc. I’ve been using
+Linux since before kernel version 1.0 when Linus Torvalds was still a
+grad student and <code>usenet</code> was the thing. Unix before that.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+I’m not a Windows developer, and development using <code>node</code> command
+line tools on Windows is not my specialty. Google and StackOverflow
+should help if you <strong class="line-through">are forced to use</strong> prefer Windows for
+development.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<h1 id="source-code" class="sect0">Source Code</h1>
+<div class="sect1">
+<h2 id="index.html">index.html</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The root node is appended to the document body in a minimal
+<code>index.html</code>, which also sources <code>bundle.js</code> and <code>App.css</code>. Webpack and
+babel with plugins and presets create <code>bundle.js</code> from all JavaScript in
+the app, compressed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;meta name="theme-color" content="#000000"&gt;
+    &lt;link rel="manifest" href="./manifest.json"&gt;
+    &lt;link rel="shortcut icon" href="./favicon.ico"&gt;
+    &lt;link href="./App.css" rel="stylesheet"/&gt;
+    &lt;title&gt;St Leo Centerville TX&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;noscript&gt;
+      You need to enable JavaScript to run this app.
+    &lt;/noscript&gt;
+    &lt;script src='./bundle.js'&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+</div>
+</div>
+<h1 id="modules" class="sect0">Modules</h1>
+<div class="sect1">
+<h2 id="app.js">App.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>App is the entry point and does little else other than import component
+modules, and create an <code>S</code> root node. The components and their ordering
+create the main display page, which in this Single Page Application is
+the whole app (most of which is hidden at this point).</p>
+</div>
+<div class="sect2">
+<h3 id="modules-and-components">Modules and Components</h3>
+<div class="paragraph">
+<p>Though the app is made of purely modular components, most were isolated
+from other code as my development evolved. Eventually, everything became
+a module with a purely functional component in it.</p>
+</div>
+<div class="paragraph">
+<p>With a more complex app, I’d create an <code>index.js</code> module that imports
+and exports these components, but no need here.</p>
+</div>
+<div class="paragraph">
+<p>There are more components than these seven. These are the top level
+components, out of 15 in all.</p>
+</div>
+<div class="paragraph">
+<p>All components in my app are ES6 modules, in addition to modules that
+are not components, such as objects with text arrays.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_source">Source</h3>
+<div class="listingblock">
+<div class="title">App.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import TopNav from './TopNav.js'
+import Header from './Header.js'
+import Intro from './Intro.js'
+import Pictures from './Pictures.js'
+import News from './News.js'
+import Events from './Events.js'
+import Footer from './Footer.js'
+/**
+   It all starts here. The entry point to the application. Index.html
+   will import the bundle that contains this, and provide the document
+   body that this appends as a child.
+
+   The top level components are introduced here. Order is important!
+ */
+let view = S.root(() =&gt;
+  &lt;div className='App'&gt;
+    &lt;div className='main'&gt;
+      &lt;TopNav/&gt;
+      &lt;Header/&gt;
+      &lt;Intro/&gt;
+      &lt;Pictures/&gt;
+      &lt;News/&gt;
+      &lt;Events/&gt;
+      &lt;Footer/&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+)
+document.body.appendChild(view)</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="langindex.js">langIndex.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This monad is used by every component that displays text in more than
+one language. The <code>langIndex</code> data stream provides an index into text
+arrays. When it changes, all displayed text changes too. Magic! Well,
+<code>S</code> data binding magic anyway.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Compare this to <code>React</code> Component’s <code>setState()</code>. With React,
+each component has its own state, and its child components only update
+theirs if <code>forceUpdate</code> is passed to <code>setState</code>. Here, any component can
+use <code>langIndex</code> simply by importing it. <code>S</code> takes care of the data
+binding.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>toggleLang</code> function does what it says. It’s invoked from the
+<code>TopNav</code> menubar at the rightmost position.</p>
+</div>
+<div class="paragraph">
+<p><code>langIndex()</code> is used by most other components.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is not a component, but just a module with exports. Note that
+it starts with lower case, which <code>Surplus</code> uses to distinguish between
+Components (upper) and Elements (lower), like <code>React</code>. In this case,
+it’s neither, but Surplus won’t treat it as a Component.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_source_2">Source</h3>
+<div class="listingblock">
+<div class="title">langIndex.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+export const langIndex = S.data(0) // Initialize to English as default.
+export const toggleLang = () =&gt; {
+  langIndex() === 0? langIndex(1): langIndex(0)
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="topnav.js">TopNav.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a relatively simple Top Navigation bar, or rather a misnamed
+menubar. Since I have other menus in another context I’ll leave the name
+as is.</p>
+</div>
+<div class="paragraph">
+<p>An important aspect of this component is its fixed position placement at
+the top of the page as set in <code>App.css</code>. The <code>SideNav</code> and <code>ModalBase</code>
+components are children of <code>TopNav</code> to take advantage of this fixed
+position, even though they are unrelated otherwise, and hidden until
+opened.</p>
+</div>
+<div class="paragraph">
+<p>The background is initially transparent, but when a non-contrasting
+background underneath scrolls under it, the text would be obscurred. To
+prevent this, a more opaque style is added when the underlying window is
+scrolled up more than 30px, and removed when not.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>window.addEventListener</code> event handler is plain old
+JavaScript and DOM. Platforms with virtual DOMs like <code>React</code> can’t do
+this directly, but <code>Surplus</code> doesn’t get in the way.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Menu elements use <code>onClick</code> to act as buttons, and either produce
+dropdown menus or invoke actions.</p>
+</div>
+<div class="paragraph">
+<p><code>TopNav</code> takes text for menu names and content from <code>textStrings</code>. As in
+the “hello world” example, there is an object key with an array of
+strings. <code>langIndex()</code> selects the text to display. This pattern is
+repeated thoughout the app.</p>
+</div>
+<div class="paragraph">
+<p>The <code>SideNav</code> component exports a function that controls its visibility,
+called <code>displayState</code> which is controlled by the hamburger menu icon. It
+opens or toggles this display with <code>openSide()</code> and <code>toggle()</code>
+functions.</p>
+</div>
+<div class="paragraph">
+<p>Another important toggle is the <code>li</code> element that controls
+<code>toggleLang()</code>, a function imported from <code>langIndex.js</code> which also
+exports the S data function <code>langIndex()</code>. A click on this element
+changes all displayed text to another language.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_3">Source</h3>
+<div class="listingblock">
+<div class="title">TopNav.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {textStrings as txt} from './textStrings.js'
+import {langIndex, toggleLang} from './langIndex.js'
+import Dropdown from './Dropdown.js'
+import SideNav from './SideNav.js'
+import {displayState} from './SideNav.js'
+import ModalBase from './ModalBase.js'
+import {displayModal} from './ModalBase.js'
+
+// Give topNav some opacity when scrolled down past 30px.
+window.addEventListener('scroll',() =&gt; {
+  if(window.scrollY &gt; 30) {
+    document.getElementsByClassName('topNav')[0].className='topNav opaque'
+  } else {
+    document.getElementsByClassName('topNav')[0].className='topNav'
+  }
+})
+const openSide = () =&gt; { // Opens the SideNav menu, via the hamburger button.
+  displayState('block')
+}
+const toggleSide = () =&gt; {
+  displayState() == 'block' ? displayState('none') : displayState('block')
+}
+/** TopNav is fixed at the top of the page, so it acts an an anchor to
+   Components that don't scroll with the rest of the page content. So
+   it has a dual purpose, the other being to provide dropdown menus,
+   as provided by its child component Dropdown with parameters and children.
+ */
+export default function TopNav() {
+  return (&lt;nav className='topNav'&gt;
+    {/* Horizontal menu, starting with the hamburger 'button'. */}
+    &lt;ul&gt;
+      &lt;span className='menu' onClick={toggleSide}&gt;
+        &lt;li className='burger dropbtn' &gt;☰&lt;/li&gt;
+        &lt;li&gt;{txt.menu[langIndex()]}&lt;Dropdown&gt;&lt;/Dropdown&gt;&lt;/li&gt;
+      &lt;/span&gt;
+      &lt;li&gt;
+        {/* Dropdown children invoke modals on selection. */}
+        &lt;Dropdown name={txt.masstimes[langIndex()]}&gt;
+          {/* size is the width of the modal invoked. Mobile displays will
+              override this value in Listings.js and MenuItem.js */}
+          &lt;content size='50%'&gt;sundaymass&lt;/content&gt;
+          &lt;content size='50%'&gt;weekdaymass&lt;/content&gt;
+        &lt;/Dropdown&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;Dropdown name={txt.aboutUs[langIndex()]}&gt;
+          &lt;content size='60%'&gt;about&lt;/content&gt;
+          &lt;content size='60%'&gt;aboutLeo&lt;/content&gt;
+        &lt;/Dropdown&gt;
+      &lt;/li&gt;
+      {/* This toggles the entire site's language content. It's always displayed. */}
+      &lt;li className='dropbtn' title={txt.toggle[langIndex()]} onClick={toggleLang}&gt;{txt.language[langIndex()]}&lt;/li&gt;
+    &lt;/ul&gt;
+    {/* SideNav menubar is hidden until invoked. */}
+    &lt;SideNav&gt;&lt;/SideNav&gt;
+    {/* Hidden until invoked. ModalBase is here for display fixed anchor point. */}
+    &lt;ModalBase className='modal'&gt;&lt;/ModalBase&gt;
+  &lt;/nav&gt;)
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dropdown.js">Dropdown.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><code>TopNav</code> uses this for creating a list of dropdown menus in its menubar.</p>
+</div>
+<div class="paragraph">
+<p>The text label is passed in from <code>TopNav</code> as <code>props.name</code>.</p>
+</div>
+<div class="paragraph">
+<p>Any number of children are passed from <code>TopNav</code> as <code>content</code> nodes. Each
+child becomes a <code>MenuItem</code>.</p>
+</div>
+<div class="paragraph">
+<p>Each content node is a <code>props.textContent</code> string that is passed to
+<code>MenuItem</code>. <code>MenuItem</code> uses the string both as a property key from
+<code>labeledText</code> to get a label, and as a file name for the modal text
+content. See <code>MenuItem</code> for details.</p>
+</div>
+<div class="paragraph">
+<p>A clicked menu item displays a <code>Modal</code>, and Modal width is passed as
+<code>props.size</code>. This width will be overridden for small screens like
+mobile devices.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_4">Source</h3>
+<div class="listingblock">
+<div class="title">Dropdown.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import MenuItem from './MenuItem.js'
+/**
+   TopNav uses this for dropdown menus. Each child property is a MenuItem.
+   Size (width) is optional from props. Otherwise the default is taken.
+   Child content elements are used for each menu item of the dropdown,
+   and the number is unlimited.
+   See TopNav for details and examples.
+ */
+export default function Dropdown(props) {
+  let content = &lt;div className='dropdown-content'&gt;&lt;/div&gt;
+  // Fill in content element with child menus.
+  if (props.children.length) {
+    props.children.forEach(p =&gt; {
+      if(p.size) { // Prop has a width parameter.
+        content.appendChild(
+          &lt;MenuItem size={p.size}&gt;{p.textContent}&lt;/MenuItem&gt;
+        )
+      } else {
+        content.appendChild(
+          &lt;MenuItem&gt;{p.textContent}&lt;/MenuItem&gt;
+        )
+      }
+    })
+  }
+  return (
+  &lt;div className='dropdown'&gt;
+    &lt;div className='dropbtn'&gt;{props.name}
+      {content}
+    &lt;/div&gt;
+  &lt;/div&gt;
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="menuitem.js">MenuItem.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Used by <code>TopNav</code> and <code>SideNav</code> to create and display menu items.</p>
+</div>
+<div class="paragraph">
+<p>The child text node passed in is used to display this component’s label,
+and is passed to <code>FetchHtmlText</code> to get a file for the modal’s display
+content.</p>
+</div>
+<div class="paragraph">
+<p>Each instance of <code>MenuItem</code> gets its own click handler, which sets up
+modal properties and invokes the modal for display. Note that
+<code>FetchHtmlText</code> loads asynchronously before (hopefully) the element is
+clicked. If not yet loaded, the modal will display without text, but
+will fill in as it’s read.</p>
+</div>
+<div class="paragraph">
+<p>The <code>size</code> prop determines the width of the modal unless overridden when
+a small screen width is detected.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_5">Source</h3>
+<div class="listingblock">
+<div class="title">MenuItem.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import * as Surplus from 'surplus'
+import {textStrings as txt} from './textStrings.js'
+import {langIndex} from './langIndex.js'
+import Modal from './Modal.js'
+import {displayModal} from './ModalBase.js'
+import {modalTitle, modalMsg} from './Modal.js'
+import FetchHtmlText from './FetchHtmlText.js'
+import {modalWidth} from './Modal.js'
+
+/**
+   Create menu items with click handlers for display.
+
+   Props.children is a single word of text. This text has two uses:
+   The menu title is displayed from textStrings.js using the label as
+   a key, and FetchHtmlText to find the filename to fetch for display
+   when the menu item is clicked.
+ */
+export default function MenuItem(props) {
+  let label = props.children,
+      size = props.size,
+      title = txt[label],
+      html = &lt;FetchHtmlText&gt;{label}&lt;/FetchHtmlText&gt;,
+      clickme = () =&gt; {
+        if(window.screen.width &gt; 760) {
+          modalWidth(size)
+        } else {
+          modalWidth('98%')
+        }
+        modalTitle(title[langIndex()])
+        modalMsg(html)
+        displayModal('block')
+      }
+  return(
+    &lt;div className='menuitem' onClick={clickme}&gt;
+      {title[langIndex()]}
+    &lt;/div&gt;
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modalbase.js">ModalBase.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This serves as an anchor or placeholder for displaying <code>Modal</code>. It hides
+the modal initially by setting the <code>displayModal</code> function, which is
+used by the modal’s CSS display style property.</p>
+</div>
+<div class="paragraph">
+<p>It creates a <code>Modal</code> child component, and sets several properties before
+returning it. The <code>tabIndex</code> property and <code>focus</code> function probably are
+not needed.</p>
+</div>
+<div class="paragraph">
+<p>The <code>node.style.width</code> and <code>node.style.display</code> properties are set to
+<code>S.data()</code> streams so they will be updated automatically with their
+state changes.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_6">Source</h3>
+<div class="listingblock">
+<div class="title">ModalBase.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import Modal from './Modal.js'
+import {modalWidth} from './Modal.js'
+
+export const displayModal = S.data('none')
+
+export default function ModalBase() {
+  let node=&lt;Modal&gt;&lt;/Modal&gt;
+  node.tabIndex = 1
+  node.focus()
+  node.style.width=modalWidth()
+  node.style.display=displayModal()
+  return(
+    node
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modal.js">Modal.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are several <code>S.data()</code> streams and CSS classes used by this
+component.</p>
+</div>
+<div class="paragraph">
+<p>The obviously named <code>close</code> function uses the S stream <code>displayModal</code>
+from <code>ModalBase</code>, which sets the modal’s CSS display style to ‘none’.</p>
+</div>
+<div class="paragraph">
+<p>The <code>modalTitle</code> and <code>modalMsg</code> data streams are initially empty, to be
+filled in by the <code>Listings</code> and <code>MenuItem</code> components when invoked.</p>
+</div>
+<div class="paragraph">
+<p>The <code>modalTitle</code> div element has the Unicode ‘X’ close button and the
+title for this modal.</p>
+</div>
+<div class="paragraph">
+<p>There is a placeholder for a footer which is currently unused.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_7">Source</h3>
+<div class="listingblock">
+<div class="title">Modal.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {displayModal} from './ModalBase.js'
+
+const close = () =&gt; {
+  displayModal('none')
+}
+export const modalTitle = S.data('')
+export const modalMsg = S.data('')
+export const modalWidth = S.data('40%')
+
+export default () =&gt; {
+  return (
+    &lt;div className="modal-content"&gt;
+      &lt;div className="modal-header" onClick={close}&gt;
+        &lt;div&gt;{modalTitle()}
+          &lt;span onClick={close} className='closemodal'&gt;{String.fromCharCode(215)}&lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div className="modal-body"&gt;
+        &lt;p&gt;{modalMsg()}&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div className="modal-footer"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sidenav.js">SideNav.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The SideNav menu opens with the <code>TopNav</code> hamburger menu, and closes with
+its own clickable X div.</p>
+</div>
+<div class="paragraph">
+<p>The <code>myside</code> variable holds the <code>Surplus</code> JSX nodes rather than
+returning the outer node directly. This is to allow properties of the
+outer node to be manipulated, such as the <code>displayState()</code>.</p>
+</div>
+<div class="paragraph">
+<p>The menu is made up of <code>MenuItem</code> components. Each <code>MenuItem</code> is given a
+<code>size</code> property which used by the modal that is invoked when selected.
+The child text node is used to select both the key in the <code>labeledText</code>
+object and filename to be read into the modal.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The child text node for the <code>close</code> element uses
+<code>String.fromCharCode(215)</code> to display <code>&amp;times;</code> because Surplus seems
+to escape the html code rather than display the <code>X</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_source_8">Source</h3>
+<div class="listingblock">
+<div class="title">SideNav.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import MenuItem from './MenuItem.js'
+
+export const displayState = S.data('none')
+const close = () =&gt; {
+  displayState('none')
+}
+export default function SideNav() {
+  let myside = &lt;div className='sidenav'&gt;
+  &lt;div&gt;&lt;/div&gt;
+
+  &lt;MenuItem size='840px' &gt;calendar&lt;/MenuItem&gt;
+  &lt;MenuItem size='370px' &gt;readings&lt;/MenuItem&gt;
+  &lt;MenuItem size='60%' &gt;pastors&lt;/MenuItem&gt;
+  &lt;div&gt;&lt;hr/&gt;&lt;/div&gt;
+  &lt;MenuItem size='30%' &gt;confession&lt;/MenuItem&gt;
+  &lt;MenuItem size='30%' &gt;adoration&lt;/MenuItem&gt;
+  &lt;div&gt;&lt;hr/&gt;&lt;/div&gt;
+  &lt;MenuItem size='60%' &gt;sick&lt;/MenuItem&gt;
+  &lt;MenuItem size='60%' &gt;troops&lt;/MenuItem&gt;
+  &lt;MenuItem size='40%' &gt;vocations&lt;/MenuItem&gt;
+  &lt;div&gt;&lt;hr/&gt;&lt;/div&gt;
+  &lt;MenuItem size='40%' &gt;gift&lt;/MenuItem&gt;
+  &lt;MenuItem size='60%' &gt;family&lt;/MenuItem&gt;
+  &lt;MenuItem size='60%' &gt;prayrosary&lt;/MenuItem&gt;
+  &lt;div&gt;&lt;hr/&gt;&lt;/div&gt;
+  &lt;MenuItem size='40%' &gt;knights&lt;/MenuItem&gt;
+  &lt;MenuItem size='40%' &gt;maidens&lt;/MenuItem&gt;
+  &lt;MenuItem size='40%' &gt;firstfriday&lt;/MenuItem&gt;
+  &lt;div onClick={close} style="font-size: 2em; padding: 0 0 0 0.3em;"&gt;{String.fromCharCode(215)}&lt;/div&gt;
+  &lt;/div&gt;
+  myside.style.display = displayState()
+  return(
+    myside
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="header.js">Header.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Displays a header with a title and subtitle taken from <code>textStrings.js</code>.
+These change content when the <code>langIndex()</code> S data stream changes.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_9">Source</h3>
+<div class="listingblock">
+<div class="title">Header.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {textStrings as txt} from './textStrings.js'
+import {langIndex} from './langIndex.js'
+
+export default function Header() {
+  return(
+    &lt;header className="App-header"&gt;
+      &lt;h1 className='App-title'&gt;{txt.title[langIndex()]}&lt;/h1&gt;
+      &lt;h2 className='App-subtitle'&gt;{txt.subtitle[langIndex()]}&lt;/h2&gt;
+    &lt;/header&gt;
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="intro.js">Intro.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>Intro</code> component displays an introduction message taken from the
+<code>welcome.html</code> file in the selected language.</p>
+</div>
+<div class="paragraph">
+<p>At first glance it would appear that the message doesn’t change when
+another language is selected, but it does because <code>FetchHtmlText</code>
+notices the <code>langIndex()</code> change.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_10">Source</h3>
+<div class="listingblock">
+<div class="title">Intro.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import FetchHtmlText from './FetchHtmlText.js'
+
+export default function Intro() {
+  return(
+    &lt;div className="App-intro"&gt;
+      &lt;FetchHtmlText&gt;welcome&lt;/FetchHtmlText&gt;
+    &lt;/div&gt;
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fetchhtmltext.js">FetchHtmlText.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Uses ES6 <code>fetch</code> to read text from a URI asynchronously. In this case
+the URI is a file, but it could be another resource.</p>
+</div>
+<div class="paragraph">
+<p>A <code>div</code> node is returned, but its <code>innerHTML</code> is filled in as it is read
+from the HTTP <code>response</code> using fetch’s promise.</p>
+</div>
+<div class="paragraph">
+<p>The <code>langIndex()</code> data stream function’s value is used to index the
+<code>lang</code> array, which has the directory name for the file to be fetched.</p>
+</div>
+<div class="paragraph">
+<p>The HTTP <code>request</code> parameters prevent caching, as file contents are
+expected to change more often than fixed text strings.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The <code>innerHTML</code> is set <strong>dangerously</strong> (in React-speak) meaning that
+malicious content could come from an untrusted URI. Since we’re reading
+from our own files here, that’s unlikely. There are no condescending
+warnings about this. Sorry!
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+HTML tags in the fetched file are passed unmodified, so styling,
+etc. works fine.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_source_11">Source</h3>
+<div class="listingblock">
+<div class="title">FetchHtmlText.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {langIndex} from './langIndex.js'
+
+export default function FetchHtmlText(props) {
+  const lang=['EN','ES'] // Directory names.
+  let node = &lt;div className='loadText'&gt;&lt;/div&gt;
+  fetch(`./${lang[langIndex()]}/${props.children[0]}.html`,
+        {cache: "no-cache, no-store, must-revalidate"})
+    .then(resp =&gt; resp.text())
+    .then(text =&gt; node.innerHTML = text)
+  return(node)
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pictures.js">Pictures.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a slideshow of pictures, with some interesting features. It’s
+the largest component in the app.</p>
+</div>
+<div class="sect2">
+<h3 id="the-image-files">The image files</h3>
+<div class="paragraph">
+<p>The imported <code>filelist.js</code> has an array of image filenames like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">export const filelist = [
+    'somepic.jpg',
+    'anotherpic.jpg',
+    ...
+]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These image files are in the <code>gallery</code> directory on the server. The code
+looks for file names in this filelist, and finds them in the directory.
+As image files are added, the filelist object must be edited manually,
+because JavaScript browser clients can’t read the server’s filesystem
+directory to construct the list.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="displaying-an-image-the-easy-way">Displaying an image the easy way</h3>
+<div class="paragraph">
+<p>Displaying a <code>jpg</code> photo image is as simple as creating an <code>img</code> node
+and assigning a resource to its <code>src</code>, like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">let mypic = &lt;img/&gt;
+mypic.src = 'pictures/mypic.jpg'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here <code>mypic</code> is a node on the browser, and <code>mypic.jpg</code> is a file that’s
+loaded over a network from the server.</p>
+</div>
+<div class="paragraph">
+<p>The problem with this approach is that loading new images, which can be
+large, takes too much time for a mobile device on a slow network.
+Preloading images in the background before they’re displayed is better.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="prefetching-images">Prefetching images</h3>
+<div class="paragraph">
+<p>Prefetching all images would be too much to handle, so I only use three.
+<code>current</code>, <code>previous</code> and <code>next</code> are Surplus nodes that will contain the
+images for display.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Properties on Surplus nodes may be added and modified directly, as
+in <code>current.position = 'absolute'</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>nextPic()</code> and <code>prevPic()</code> functions select a new picture as the
+user cycles through the <code>filelist</code> array by clicking on chevrons or
+swiping on touch-sensitive devices, and updating the array index
+<code>picIndex()</code>, which cycles through the array to make it seem circular to
+the user. The same is done for <code>prevIndex()</code> and <code>nextIndex()</code>.</p>
+</div>
+<div class="paragraph">
+<p>With each click (or swipe) a new image is loaded. But the trick here is
+that the newly loading image isn’t the one the user sees. The user sees
+an image that’s <em>already</em> loaded, while a new one is fetched
+asynchronously in the background.</p>
+</div>
+<div class="paragraph">
+<p>The user can only select the previous or next image, as there is no
+option for random selection. Prefetching these two unseen images
+anticipates the user’s next selection in either direction. This forms a
+three image sliding window that moves across the array of pictures, with
+the oldest dropped, the newest preloaded, and the user viewing the one
+in the middle.</p>
+</div>
+<div class="paragraph">
+<p>The users could easily outrun the prefetch, but hopefully they will
+spend enough time looking at the selected pic to allow the prefetch to
+catch up. Outrunning the prefetch doesn’t hurt, but clicking or swiping
+has no effect until the image is loaded.</p>
+</div>
+<div class="paragraph">
+<p>The <code>current</code>, <code>previous</code> and <code>next</code> views are initialized to contain
+their respective images before any user interaction.</p>
+</div>
+<div class="paragraph">
+<p>When <code>nextPic()</code> is invoked, the <code>current.src</code> image is copied to
+<code>previous.src</code>. We know that it’s already been loaded. In the same way,
+<code>next</code> image content is copied to <code>current</code>, and <code>next.src</code> is given new
+content by <code>fetchPic()</code>. The <code>current</code> node doesn’t change. Instead,
+<code>current.src</code> gets new content. Likewise with <code>previous</code> and <code>next</code>. The
+indexes for the three nodes are updated, and <code>next</code> has a new image
+loaded asynchronously in the background.</p>
+</div>
+<div class="paragraph">
+<p><code>prevPic()</code> is identical to <code>nextPic()</code>, except it cycles in the other
+direction.</p>
+</div>
+<div class="paragraph">
+<p><code>fetchPic()</code> does what it says, using ES6 <code>fetch</code>, which returns a
+promise. Note that the actual update is done inside this function
+closure after it returns. This allows the operation to work in the
+background, asynchronously.</p>
+</div>
+<div class="paragraph">
+<p>When the page first loads, the user hasn’t yet selected an image, so
+nothing would be displayed without initialization. We initialize our
+three image nodes. The <code>current</code> image is loaded first, followed by the
+other two so that the user only has to wait for the first to see an
+image on startup.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="swipe">Swipe</h3>
+<div class="paragraph">
+<p>For devices that support touch events, swiping to select previous and
+next images is convenient. Attaching the right event handlers to invoke
+<code>prevPic()</code> and <code>nextPic()</code> does the trick.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There are libraries like <code>hammer.js</code> that provide functions for
+this, but they also add lots of extra code for features I don’t need.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Chrome’s debugger let me examine events for clues about how to use
+them. Chrome on my Linux laptop doesn’t support touch events, but their
+debugger simulates them if a smartphone emulator is selected. (I don’t
+know how to bring up the debugger on a smartphone, if it’s even
+possible.)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>I use <code>swipeStart()</code> and <code>swipeEnd()</code> to capture the coordinates for the
+user action. A little <code>diff</code> helper tells me how far across the screen
+they swiped regardless of direction in the X coordinate. <code>swipeEnd()</code> is
+where things happen. The last line looks at the direction of the swipe
+to invoke the proper action.</p>
+</div>
+<div class="paragraph">
+<p>I noticed that almost any touch will invoke an X coordinate change,
+which can lead to annoying picture changes while swiping up or down. To
+avoid this I ignore X coordinate changes smaller than an arbitrary pixel
+value picked by experimentation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="attaching-the-touch-event-handler">Attaching the touch event handler</h3>
+<div class="paragraph">
+<p>When working with JSX it’s easy to fall for the illusion that you’re
+working with HTML, when in fact it’s all JavaScript. Some event handlers
+like <code>onClick</code> are effectively passed through, but others have to
+directly attached to a DOM node. I tried <code>onTouch</code> but it had no effect,
+so I went down a level of abstraction to capture the DOM event.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+I always try to understand at least one level of abstraction below
+the one I’m using. It’s a good rule of thumb for all software
+development.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>With Surplus (and other JSX implementations) this is done by creating a
+JavaScript variable and assigning a Surplus node to it, like so:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">let foo = &lt;div/&gt;
+foo.addEventListener(...)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>So <code>foo</code> can invoke the <code>addEventListener()</code> function while a simple
+<code>&lt;div/&gt;</code> by itself could not. It’s still a Surplus node, but assigning
+it to a JavaScript variable lets us add and modify its properties. This
+is why the <code>Picture</code> component returns JavaScript rather than more
+readable JSX.</p>
+</div>
+<div class="paragraph">
+<p>The original (before adding the touch events) code looked like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">return(
+    &lt;div className='container'&gt;
+      &lt;div className='picture'&gt;
+        &lt;span id='previous'&gt;
+          &lt;span onClick={prevPic} className='chevron left'&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span id='next'&gt;
+          &lt;span onClick={nextPic} className='next chevron right'&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        {current}
+      &lt;/div&gt;
+    &lt;/div&gt;
+)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>I converted the JSX into a series of JavaScript variables containing
+Surplus nodes. The event listeners are then added to <code>pic</code> (with the
+element containing <code>current</code>), and the return node is constructed by
+appending child nodes so that it all behaves like the JSX shown above.</p>
+</div>
+<div class="paragraph">
+<p>After converting to Javascript nodes and adding event listeners it looks
+like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">// Construct the containing element, with event listeners.
+let left = &lt;span onClick={prevPic} className='chevron left'&gt;&lt;/span&gt;, <i class="conum" data-value="1"></i><b>(1)</b>
+    right = &lt;span onClick={nextPic} className='next chevron right'&gt;&lt;/span&gt;,
+    container = &lt;div className='container'&gt;&lt;/div&gt;,
+    prespan = &lt;span id='previous'&gt;{left}&lt;/span&gt;,
+    nextspan = &lt;span id='next'&gt;{right}&lt;/span&gt;,
+    pic = &lt;div className='picture'&gt;{current}&lt;/div&gt;
+
+pic.addEventListener('touchstart',swipeStart) <i class="conum" data-value="2"></i><b>(2)</b>
+pic.addEventListener('touchend',swipeEnd) <i class="conum" data-value="3"></i><b>(3)</b>
+
+export default function Pictures() {
+  pic.appendChild(prespan) // left chevron <i class="conum" data-value="4"></i><b>(4)</b>
+  pic.appendChild(nextspan) // right chevron <i class="conum" data-value="4"></i><b>(4)</b>
+  container.appendChild(pic)
+  return(container) <i class="conum" data-value="5"></i><b>(5)</b>
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Each JSX element is now a node referenced by a variable.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The <code>touchstart</code> event handler has a node to attach to.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>touchend</code> has one too. Separate handlers for different events.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The clickable chevrons are for <code>previous</code> and <code>next</code> along with the
+touch events.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>The <code>container</code> is just like the old JSX return node, but with added
+event handlers.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_source_12">Source</h3>
+<div class="listingblock">
+<div class="title">Pictures.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {filelist} from '../public/gallery/filelist.js'
+/**
+   Display a slideshow of photo images.
+ */
+
+// Init image elements and indexes into the picture file list.
+let current = &lt;img width='900'/&gt;,
+    previous = &lt;img/&gt;,
+    next = &lt;img/&gt;,
+    picIndex = S.data(0), // Index to initial picture in array.
+    nextIndex = S.data(1),
+    prevIndex = S.data(filelist.length-1)
+
+current.position = 'absolute'
+// Hander for right chevron or right swipe.
+let nextPic = () =&gt; {
+  picIndex()  &gt;= filelist.length-1 ? picIndex(0): picIndex(picIndex()+1);
+  previous.src = current.src
+  current.src = next.src
+  nextIndex(picIndex() &gt;= filelist.length-1 ? 0 : picIndex()+1)
+  // prefetch next pic
+  fetchPic('./gallery/'+filelist[nextIndex()],next)
+}
+// Handler for left click or swipe.
+let prevPic = () =&gt; {
+  picIndex()  &lt;= 0 ? picIndex(filelist.length-1): picIndex(picIndex()-1);
+  next.src = current.src
+  current.src = previous.src
+  prevIndex( picIndex() &lt;= 0 ? filelist.length-1 : picIndex()-1)
+  fetchPic('./gallery/'+filelist[prevIndex()],previous)
+}
+
+let fetchPic = (name,node) =&gt; { // Pic filename, and node to load into.
+  return (fetch(name,{cache: "public, max-age=0"}) // Cache if possible.
+    .then((res) =&gt; {return res.blob()})
+    .then((myBlob) =&gt; {
+      let url = URL.createObjectURL(myBlob)
+      node.src = url
+      node.alt = name // File name. A better alt text would be nice.
+    })
+  )
+}
+// Initialize current pic first, then others in the background.
+fetchPic('./gallery/'+filelist[picIndex()],current)
+  .then(fetchPic('./gallery/'+filelist[nextIndex()],next))
+  .then(fetchPic('./gallery/'+filelist[prevIndex()],previous))
+
+// Use swipe on devices that use touch events. Record swipe start, end.
+let sStart = 0,
+    sEnd = 0
+let swipeStart = (e) =&gt; {
+  sStart = e.touches[0].screenX
+}
+// End of swipe is where we decide action.
+let swipeEnd = (e) =&gt; {
+  sEnd = e.changedTouches[0].screenX
+  if(diff(sStart,sEnd) &gt; 45) { // ignore accidental changes
+    sStart &gt; sEnd ? prevPic() : nextPic() // swiped left or right?
+  }
+}
+// Difference between start and end of swipe ignoring direction.
+let diff = (start,end) =&gt; {
+  let df = start &gt; end ? start-end : end-start
+  return df
+}
+// Construct the containing element, with event listeners.
+let left = &lt;span onClick={prevPic} className='chevron left'&gt;&lt;/span&gt;,
+    right = &lt;span onClick={nextPic} className='next chevron right'&gt;&lt;/span&gt;,
+    container = &lt;div className='container'&gt;&lt;/div&gt;,
+    prespan = &lt;span id='previous'&gt;{left}&lt;/span&gt;,
+    nextspan = &lt;span id='next'&gt;{right}&lt;/span&gt;,
+    pic = &lt;div className='picture'&gt;{current}&lt;/div&gt;
+
+pic.addEventListener('touchstart',swipeStart)
+pic.addEventListener('touchend',swipeEnd)
+
+export default function Pictures() {
+  pic.appendChild(prespan) // left chevron
+  pic.appendChild(nextspan) // right chevron
+  container.appendChild(pic)
+  return(container)
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="news.js">News.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Displays a list of newsworthy items as clickable text. All of the real
+work is done by <code>Listings</code>.</p>
+</div>
+<div class="paragraph">
+<p>Identical to <code>Events.js</code> except for some string content.</p>
+</div>
+<div class="paragraph">
+<p>The news items come from <code>newsStrings.js</code>, which is manually edited for
+updated content along with matching text content files.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_13">Source</h3>
+<div class="listingblock">
+<div class="title">News.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {textStrings as txt} from './textStrings.js'
+import Listings from './Listings.js'
+import {langIndex} from './langIndex.js'
+
+export default function News() {
+  return(
+    &lt;div className='news'&gt;
+      &lt;div&gt;
+        &lt;span className='title'&gt;{txt.news[langIndex()]}&lt;/span&gt;
+        &lt;hr/&gt;
+        &lt;Listings type='news'&gt;&lt;/Listings&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="events.js">Events.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Displays a list of event items as clickable text. All of the real work
+is done by <code>Listings</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These are social Events like dinners, not DOM events or the like.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Identical to <code>News.js</code> except for string content.</p>
+</div>
+<div class="paragraph">
+<p>The event items come from <code>eventsStrings.js</code>, which is manually edited
+for updated content along with matching text content files.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_14">Source</h3>
+<div class="listingblock">
+<div class="title">Events.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {textStrings as txt} from './textStrings.js'
+import Listings from './Listings.js'
+import {langIndex} from './langIndex.js'
+
+export default function Events() {
+  return(
+    &lt;div className='events'&gt;
+      &lt;div&gt;
+        &lt;span className='title'&gt;{txt.events[langIndex()]}&lt;/span&gt;
+        &lt;hr/&gt;
+        &lt;Listings type='events'&gt;&lt;/Listings&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="listings.js">Listings.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Displays a list of News or Events. Since they share the same format, I
+use the same component for both by setting the correct object from the
+props.type.</p>
+</div>
+<div class="paragraph">
+<p>This is much like other menus, except that it has some extra information
+to display. Because <code>News</code> and <code>Events</code> are so similar, they share this
+component.</p>
+</div>
+<div class="paragraph">
+<p>First <code>props.type</code> is used to set <code>newsEvents</code> to contain the
+appropriate text objects. The <code>newsStrings.js</code> and <code>eventsString.js</code> are
+each object literals with a series of property keys having an array of
+strings.</p>
+</div>
+<div class="paragraph">
+<p>A single <code>div</code> contains each listing as child elements.</p>
+</div>
+<div class="paragraph">
+<p>The keys in the object file are iterated through, and an entry is made
+for each. Because each entry is clickable, it gets its own click
+handler. The click handler fetches its file content and displays a
+modal. Note that this doesn’t happen until the click, so there is no
+prefetch (unlike <code>SideNav</code>). If a second item is clicked while the modal
+is open, the same modal just displays new content rather than creating a
+new one.</p>
+</div>
+<div class="paragraph">
+<p>The number of listings is determined by the number of keys in the object
+files, with no limit.</p>
+</div>
+<div class="paragraph">
+<p>The text object files have four strings in each array, rather than two
+as seen in other text object files. This is for additional messages such
+as dates and notes. A numeric <code>2</code> is added to the language index to
+select the right message. An even number index is for one language, and
+odd for another. This could be extended for more text easily.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_15">Source</h3>
+<div class="listingblock">
+<div class="title">Listings.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {newsStrings as news} from './newsStrings.js'
+import {eventsStrings as events} from './eventsStrings.js'
+import {langIndex} from './langIndex.js'
+import {modalTitle, modalMsg} from './Modal.js'
+import FetchHtmlText from './FetchHtmlText.js'
+import {modalWidth} from './Modal.js'
+import {displayModal} from './ModalBase.js'
+
+/**
+   Display a list of News or Events. Since they share the same format, we
+   can use the same component for both, by setting the correct object
+   from the props.type.
+ */
+export default function Listings(props) {
+  /* set a constant that contains the object with strings */
+  const newsEvents = props.type === 'news'? news : events
+  let div = &lt;div&gt;&lt;/div&gt; // One div holds all of the listings.
+  Object.keys(newsEvents)
+        .forEach(key =&gt; {
+          let clickMe = () =&gt; { // Each listing gets its own click handler.
+            let html = &lt;FetchHtmlText&gt;{key}&lt;/FetchHtmlText&gt;
+            if(window.screen.width &gt; 760) { // Accomodate small screens.
+              modalWidth('60%')
+            } else {
+              modalWidth('98%')
+            }
+            modalTitle(newsEvents[key][langIndex()])
+            modalMsg(html)
+            displayModal('block') // Open Modal.
+          }
+          let child = &lt;div className='listing' onClick={clickMe}&gt;
+          {newsEvents[key][langIndex()]}
+          &lt;/div&gt;
+          let hr = &lt;hr/&gt;
+          let date = &lt;div className='date'&gt;{newsEvents[key][langIndex()+2]}&lt;/div&gt;
+          div.appendChild(child)
+          div.appendChild(date)
+          div.appendChild(hr)
+        })
+  return(div)
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="footer.js">Footer.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Returns a <code>div</code> containing text labels and brief content.</p>
+</div>
+<div class="paragraph">
+<p>See the <code>GetLabeledText</code> component for more detail.</p>
+</div>
+<div class="paragraph">
+<p>The first <code>footertitle</code> entry doesn’t change when languages are
+switched, because it doesn’t vary. The rest of the text changes.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_16">Source</h3>
+<div class="listingblock">
+<div class="title">Footer.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {textStrings as txt} from './textStrings.js'
+import GetLabeledText from './GetLabeledText.js'
+import {labeledText as lt} from './labeledText.js'
+
+export default function Footer(props) {
+  return(
+    &lt;div className='footer'&gt;
+      &lt;div className='label address'&gt;
+        &lt;div className='footertitle'&gt;{txt.title[0]}&lt;/div&gt;
+        &lt;GetLabeledText&gt;address&lt;/GetLabeledText&gt;
+      &lt;/div&gt;
+      &lt;div className='label'&gt;
+        &lt;GetLabeledText&gt;admin&lt;/GetLabeledText&gt;
+      &lt;/div&gt;
+      &lt;div className='label contact'&gt;
+        &lt;GetLabeledText&gt;contact&lt;/GetLabeledText&gt;
+      &lt;/div&gt;
+      &lt;div className='label'&gt;
+        &lt;GetLabeledText&gt;hours&lt;/GetLabeledText&gt;
+      &lt;/div&gt;
+      &lt;div className='label'&gt;
+        &lt;GetLabeledText&gt;email&lt;/GetLabeledText&gt;
+      &lt;/div&gt;
+      &lt;div className='brag'&gt;powered by &lt;span className='me'&gt;Les &lt;/span&gt; (bithits@gmail.com)&lt;/div&gt;
+    &lt;/div&gt;
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getlabeledtext.js">GetLabeledText.js</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Used only by the <code>Footer</code> component, it reads the file <code>labeledText.js</code>.
+The format is the same as <code>eventsString.js</code> and <code>newsStrings.js</code>. Only
+the content is different.</p>
+</div>
+<div class="paragraph">
+<p>Unlike the other two files, this content is only used for displaying
+labels and static text strings, and should rarely change. The second
+string <code>msg</code> can contain HTML tags and styles.</p>
+</div>
+<div class="sect2">
+<h3 id="_source_17">Source</h3>
+<div class="listingblock">
+<div class="title">GetLabeledText.js</div>
+<div class="content">
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
+import * as Surplus from 'surplus'
+import {langIndex} from './langIndex.js'
+import {labeledText as lt} from './labeledText.js'
+
+export default function GetLabeledText(props) {
+  let textNode=&lt;div className='msg'&gt;&lt;/div&gt;
+  let label=props.children
+  let msg=lt[label]
+  textNode.innerHTML = lt[label][langIndex()+2]
+  return(
+    &lt;div className='labeledtext'&gt;
+      &lt;div className='labeled'&gt;{lt[label][langIndex()]}&lt;/div&gt;
+      {textNode}
+    &lt;/div&gt;
+  )
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2018-01-12 08:55:01 CST
+</div>
+</div>
+<script src="prism/prism.js"></script>
+</body>
+</html>
