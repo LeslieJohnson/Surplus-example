@@ -244,34 +244,34 @@ the app, compressed.
 
 === https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/App.adoc[App.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/langIndex.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/langIndex.adoc[langIndex.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/TopNav.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/TopNav.adoc[TopNav.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Dropdown.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Dropdown.adoc[Dropdown.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/MenuItem.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/MenuItem.adoc[MenuItem.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/ModalBase.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/ModalBase.adoc[ModalBase.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Modal.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Modal.adoc[Modal.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/SideNav.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/SideNav.adoc[SideNav.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Header.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Header.adoc[Header.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Intro.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Intro.adoc[Intro.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/FetchHtmlText.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/FetchHtmlText.adoc[FetchHtmlText.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Pictures.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Pictures.adoc[Pictures.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/News.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/News.adoc[News.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Events.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Events.adoc[Events.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Listings.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Listings.adoc[Listings.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Footer.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/Footer.adoc[Footer.js]
 
-=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/GetLabeledText.adoc
+=== https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/GetLabeledText.adoc[GetLabeledText.js]
