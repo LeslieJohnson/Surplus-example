@@ -35,7 +35,7 @@ it’s neither, but Surplus won’t treat it as a Component.
 import S from 's-js'
 export const langIndex = S.data(0) // Initialize to English as default.
 export const toggleLang = () => {
-  langIndex() === 0? langIndex(1): langIndex(0)
+  langIndex() === 0 ? langIndex(1) : langIndex(0)
 }
 ----
 

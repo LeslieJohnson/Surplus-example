@@ -577,8 +577,8 @@ language selection for all menus and text across the app.</p>
 </div>
 <div class="paragraph">
 <p>My goal was to make a simple, fast and mobile-friendly reactive app
-without any server code. The result is 226 lines of source code,
-(including comments, minus text files), in 15 ES6 modules. After
+without any server code. The result is 491 lines of source code,
+(including comments, excluding text files), in 16 ES6 modules. After
 compression, the app bundle is about 25K, not gzipped.</p>
 </div>
 <div class="admonitionblock note">
@@ -612,15 +612,15 @@ changes, “S automatically updates downstream computations” says the
 Github page.</p>
 </div>
 <div class="paragraph">
-<p><code>Surplus</code> adds JSX web views to <code>S</code> applications, according to its docs.
-To me, it looks like a less complex <code>React</code> with better functionality
-and can be a first-rate development framework.</p>
+<p><code>Surplus</code> adds JSX web views to S applications, according to its docs.
+To me, it looks like a less complex React with better functionality and
+can be a first-rate development framework.</p>
 </div>
 <div class="sect2">
 <h3 id="s.js">S.js</h3>
 <div class="paragraph">
-<p>The idea behind <code>S</code> is wonderfully simple. There is no virtual DOM, but
-data changes are tracked and the <em>real</em> DOM is updated accordingly. <code>S</code>
+<p>The idea behind S is wonderfully simple. There is no virtual DOM, but
+data changes are tracked and the <em>real</em> DOM is updated accordingly. S
 implements data binding with functions that use data signals, rather
 than using variables. When a value is changed, signals are sent to all
 components that depend on the value and are automatically updated.</p>
@@ -629,7 +629,7 @@ components that depend on the value and are automatically updated.</p>
 <p>This is a big deal because it greatly simplifies building and
 understanding an app. Component lifecycles are gone. No
 mounting/unmounting of components, because there is nothing to mount.
-It’s just the DOM. It’s like <code>React</code> with a <em>whole unnecessary middle
+It’s just the DOM. It’s like React with a <em>whole unnecessary middle
 layer removed</em> and replaced with something better.</p>
 </div>
 <div class="paragraph">
@@ -712,17 +712,17 @@ comments within JSX, and is not Surplus-specific.
 <div class="paragraph">
 <p><code>langIndex</code> is a monad used to get (and change) the language index
 dynamically throughout the app. Wherever it’s used inside a component or
-element, <code>S</code> adds the element as a subscriber internally. When the value
+element, S adds the element as a subscriber internally. When the value
 inside the monad changes, each subscriber is notified and the element is
 updated. This is the ‘reactive’ part of the app.</p>
 </div>
 <div class="paragraph">
 <p>Changing this index results in an display update <em>in every DOM element</em>
 that uses the index to get a string value. This can be a text node, a
-<code>CSS</code> class value, an <code>href</code> string or anything else. My trivial example
+CSS class value, an <code>href</code> string or anything else. My trivial example
 shows one <code>div</code>, but if a hundred elements depended on this index, they
-would all change. The <code>langIndex()</code> is <code>S</code>, and the <code>div</code> in JSX is
-<code>Surplus</code>.</p>
+would all change. The <code>langIndex()</code> is S, and the <code>div</code> in JSX is
+Surplus.</p>
 </div>
 <div class="paragraph">
 <p>Because there is no virtual DOM, there are no Component Lifecycles, and
@@ -730,12 +730,11 @@ no Synthetic Events. There <em>are</em> Components that, like React, start with
 a capital letter. For compatibility with React, keywords like
 <code>className</code> and <code>onClick</code> are aliased, but need not be. <code>props</code> are
 passed in the same way as React. Native DOM event handlers, classes,
-properties etc. work with <code>Surplus</code> components seamlessly.</p>
+properties etc. work with Surplus components seamlessly.</p>
 </div>
 <div class="paragraph">
-<p><code>Surplus</code> components look like the pure functional components in <code>React</code>
-and <code>Inferno</code>. <code>JSX</code> is a standard separate from <code>React</code>, and <code>Surplus</code>
-follows the standard.</p>
+<p>Surplus components look like the pure functional components in React and
+Inferno. JSX is a standard separate from React which Surplus follows.</p>
 </div>
 </div>
 </div>
@@ -751,16 +750,16 @@ files. The live version can be seen at
 <a href="http://stleocenterville.org">stleocenterville.org</a>.</p>
 </div>
 <div class="paragraph">
-<p>I inherited a Network Solutions server which doesn’t run <code>node</code>, so all
+<p>I inherited a Network Solutions server which doesn’t run node, so all
 code runs on the client. I wanted to provide a website for the parish,
-to demonstrate <code>S</code> and <code>Surplus</code>, and have a public-facing open source
-app as an example of my work. It’s a successor to a previous version I
-wrote using <code>AngularJS</code>, and I started this version’s development using
-<code>React</code>, then <code>Inferno</code>, then <code>Surplus</code>.</p>
+to demonstrate S and Surplus, and have a public-facing open source app
+as an example of my work. It’s a successor to a previous version I wrote
+using AngularJS, and I started this version’s development using React,
+then Inferno, then Surplus.</p>
 </div>
 <div class="paragraph">
 <p>It has standard dropdown menus, a sidenav bar, header, footer, modals,
-event calendar and a picture slideshow. There are 15 Components, each in
+event calendar and a picture slideshow. There are 16 Components, each in
 a separate ES6 module. Other JavaScript files have text data and there
 is a directory in each language for html and text content files. A
 <code>gallery</code> directory has <code>jpg</code> pictures. A <code>util</code> directory has some
@@ -779,9 +778,8 @@ document.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>I use standard command line and scripted JavaScript developer tools,
-like <code>git</code>, <code>npm</code>, <code>webpack</code> with <code>babel</code>, <code>bash</code> and others. The
-<code>package.json</code> and <code>webpack.config.js</code> should look familiar to any
-modern developer.</p>
+like git, npm, webpack with babel, bash and others. The <code>package.json</code>
+and <code>webpack.config.js</code> should look familiar to any modern developer.</p>
 </div>
 <div class="paragraph">
 <p>Emacs is my IDE. Emacs does everything an IDE does if it’s setup right.</p>
@@ -793,7 +791,7 @@ modern developer.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-I use the <code>web-mode</code> Emacs package for <code>html, js, jsx, css</code> files
+I use the <code>web-mode</code> Emacs package for html, js, jsx, css files
 along with <code>aggressive-indent-mode</code>. They both understand mixed modes
 like embedded JSX and CSS in HTML. Add <code>fly-check</code>, and you’ll have
 automatic indenting and formatting, syntax highlighting and error
@@ -808,7 +806,7 @@ generation in JSX and HTML.
 wife says I can use after I pry it from her cold, dead fingers, but she
 tests my stuff with it along with her iPhone, iPad, etc. I’ve been using
 Linux since before kernel version 1.0 when Linus Torvalds was still a
-grad student and <code>usenet</code> was the thing. Unix before that.</p>
+grad student and usenet was the thing. Unix before that.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -817,10 +815,9 @@ grad student and <code>usenet</code> was the thing. Unix before that.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-I’m not a Windows developer, and development using <code>node</code> command
+I’m not a Windows developer, and development using node command
 line tools on Windows is not my specialty. Google and StackOverflow
-should help if you <strong class="line-through">are forced to use</strong> prefer Windows for
-development.
+should help if you prefer Windows for development.
 </td>
 </tr>
 </table>
@@ -915,13 +912,13 @@ import Footer from './Footer.js'
 let view = S.root(() =&gt;
   &lt;div className='App'&gt;
     &lt;div className='main'&gt;
-      &lt;TopNav/&gt;
-      &lt;Header/&gt;
-      &lt;Intro/&gt;
-      &lt;Pictures/&gt;
-      &lt;News/&gt;
-      &lt;Events/&gt;
-      &lt;Footer/&gt;
+      &lt;TopNav /&gt;
+      &lt;Header /&gt;
+      &lt;Intro /&gt;
+      &lt;Pictures /&gt;
+      &lt;News /&gt;
+      &lt;Events /&gt;
+      &lt;Footer /&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 )
@@ -986,7 +983,7 @@ it’s neither, but Surplus won’t treat it as a Component.
 <pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
 export const langIndex = S.data(0) // Initialize to English as default.
 export const toggleLang = () =&gt; {
-  langIndex() === 0? langIndex(1): langIndex(0)
+  langIndex() === 0 ? langIndex(1) : langIndex(0)
 }</code></pre>
 </div>
 </div>
@@ -1055,42 +1052,36 @@ changes all displayed text to another language.</p>
 <div class="listingblock">
 <div class="title">TopNav.js</div>
 <div class="content">
-<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
-import * as Surplus from 'surplus'
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import * as Surplus from 'surplus'
 import {textStrings as txt} from './textStrings.js'
 import {langIndex, toggleLang} from './langIndex.js'
 import Dropdown from './Dropdown.js'
-import SideNav from './SideNav.js'
-import {displayState} from './SideNav.js'
+import SideNav, {displayState} from './SideNav.js'
 import ModalBase from './ModalBase.js'
-import {displayModal} from './ModalBase.js'
 
 // Give topNav some opacity when scrolled down past 30px.
-window.addEventListener('scroll',() =&gt; {
-  if(window.scrollY &gt; 30) {
-    document.getElementsByClassName('topNav')[0].className='topNav opaque'
+window.addEventListener('scroll', () =&gt; {
+  if (window.scrollY &gt; 30) {
+    document.getElementsByClassName('topNav')[0].className = 'topNav opaque'
   } else {
-    document.getElementsByClassName('topNav')[0].className='topNav'
+    document.getElementsByClassName('topNav')[0].className = 'topNav'
   }
 })
-const openSide = () =&gt; { // Opens the SideNav menu, via the hamburger button.
-  displayState('block')
-}
 const toggleSide = () =&gt; {
-  displayState() == 'block' ? displayState('none') : displayState('block')
+  displayState() === 'block' ? displayState('none') : displayState('block')
 }
 /** TopNav is fixed at the top of the page, so it acts an an anchor to
    Components that don't scroll with the rest of the page content. So
    it has a dual purpose, the other being to provide dropdown menus,
    as provided by its child component Dropdown with parameters and children.
  */
-export default function TopNav() {
+export default function TopNav () {
   return (&lt;nav className='topNav'&gt;
     {/* Horizontal menu, starting with the hamburger 'button'. */}
     &lt;ul&gt;
       &lt;span className='menu' onClick={toggleSide}&gt;
         &lt;li className='burger dropbtn' &gt;☰&lt;/li&gt;
-        &lt;li&gt;{txt.menu[langIndex()]}&lt;Dropdown&gt;&lt;/Dropdown&gt;&lt;/li&gt;
+        &lt;li&gt;{txt.menu[langIndex()]}&lt;Dropdown /&gt;&lt;/li&gt;
       &lt;/span&gt;
       &lt;li&gt;
         {/* Dropdown children invoke modals on selection. */}
@@ -1111,9 +1102,9 @@ export default function TopNav() {
       &lt;li className='dropbtn' title={txt.toggle[langIndex()]} onClick={toggleLang}&gt;{txt.language[langIndex()]}&lt;/li&gt;
     &lt;/ul&gt;
     {/* SideNav menubar is hidden until invoked. */}
-    &lt;SideNav&gt;&lt;/SideNav&gt;
+    &lt;SideNav /&gt;
     {/* Hidden until invoked. ModalBase is here for display fixed anchor point. */}
-    &lt;ModalBase className='modal'&gt;&lt;/ModalBase&gt;
+    &lt;ModalBase className='modal' /&gt;
   &lt;/nav&gt;)
 }</code></pre>
 </div>
@@ -1150,8 +1141,7 @@ mobile devices.</p>
 <div class="listingblock">
 <div class="title">Dropdown.js</div>
 <div class="content">
-<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
-import * as Surplus from 'surplus'
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import * as Surplus from 'surplus'
 import MenuItem from './MenuItem.js'
 /**
    TopNav uses this for dropdown menus. Each child property is a MenuItem.
@@ -1160,12 +1150,12 @@ import MenuItem from './MenuItem.js'
    and the number is unlimited.
    See TopNav for details and examples.
  */
-export default function Dropdown(props) {
-  let content = &lt;div className='dropdown-content'&gt;&lt;/div&gt;
+export default function Dropdown (props) {
+  let content = &lt;div className='dropdown-content' /&gt;
   // Fill in content element with child menus.
   if (props.children.length) {
     props.children.forEach(p =&gt; {
-      if(p.size) { // Prop has a width parameter.
+      if (p.size) { // Prop has a width parameter.
         content.appendChild(
           &lt;MenuItem size={p.size}&gt;{p.textContent}&lt;/MenuItem&gt;
         )
@@ -1177,11 +1167,11 @@ export default function Dropdown(props) {
     })
   }
   return (
-  &lt;div className='dropdown'&gt;
-    &lt;div className='dropbtn'&gt;{props.name}
-      {content}
+    &lt;div className='dropdown'&gt;
+      &lt;div className='dropbtn'&gt;{props.name}
+        {content}
+      &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
   )
 }</code></pre>
 </div>
@@ -1219,11 +1209,9 @@ a small screen width is detected.</p>
 <pre class="highlight"><code class="language-jsx" data-lang="jsx">import * as Surplus from 'surplus'
 import {textStrings as txt} from './textStrings.js'
 import {langIndex} from './langIndex.js'
-import Modal from './Modal.js'
 import {displayModal} from './ModalBase.js'
-import {modalTitle, modalMsg} from './Modal.js'
+import {modalTitle, modalMsg, modalWidth} from './Modal.js'
 import FetchHtmlText from './FetchHtmlText.js'
-import {modalWidth} from './Modal.js'
 
 /**
    Create menu items with click handlers for display.
@@ -1233,22 +1221,22 @@ import {modalWidth} from './Modal.js'
    a key, and FetchHtmlText to find the filename to fetch for display
    when the menu item is clicked.
  */
-export default function MenuItem(props) {
+export default function MenuItem (props) {
   let label = props.children,
-      size = props.size,
-      title = txt[label],
-      html = &lt;FetchHtmlText&gt;{label}&lt;/FetchHtmlText&gt;,
-      clickme = () =&gt; {
-        if(window.screen.width &gt; 760) {
-          modalWidth(size)
-        } else {
-          modalWidth('98%')
-        }
-        modalTitle(title[langIndex()])
-        modalMsg(html)
-        displayModal('block')
+    size = props.size,
+    title = txt[label],
+    html = &lt;FetchHtmlText&gt;{label}&lt;/FetchHtmlText&gt;,
+    clickme = () =&gt; {
+      if (window.screen.width &gt; 760) {
+        modalWidth(size)
+      } else {
+        modalWidth('98%')
       }
-  return(
+      modalTitle(title[langIndex()])
+      modalMsg(html)
+      displayModal('block')
+    }
+  return (
     &lt;div className='menuitem' onClick={clickme}&gt;
       {title[langIndex()]}
     &lt;/div&gt;
@@ -1284,18 +1272,17 @@ state changes.</p>
 <div class="content">
 <pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
 import * as Surplus from 'surplus'
-import Modal from './Modal.js'
-import {modalWidth} from './Modal.js'
+import Modal, {modalWidth} from './Modal.js'
 
 export const displayModal = S.data('none')
 
-export default function ModalBase() {
-  let node=&lt;Modal&gt;&lt;/Modal&gt;
+export default function ModalBase () {
+  let node = &lt;Modal /&gt;
   node.tabIndex = 1
   node.focus()
-  node.style.width=modalWidth()
-  node.style.display=displayModal()
-  return(
+  node.style.width = modalWidth()
+  node.style.display = displayModal()
+  return (
     node
   )
 }</code></pre>
@@ -1344,17 +1331,16 @@ export const modalWidth = S.data('40%')
 
 export default () =&gt; {
   return (
-    &lt;div className="modal-content"&gt;
-      &lt;div className="modal-header" onClick={close}&gt;
+    &lt;div className='modal-content'&gt;
+      &lt;div className='modal-header' onClick={close}&gt;
         &lt;div&gt;{modalTitle()}
           &lt;span onClick={close} className='closemodal'&gt;{String.fromCharCode(215)}&lt;/span&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;div className="modal-body"&gt;
+      &lt;div className='modal-body'&gt;
         &lt;p&gt;{modalMsg()}&lt;/p&gt;
       &lt;/div&gt;
-      &lt;div className="modal-footer"&gt;
-      &lt;/div&gt;
+      &lt;div className='modal-footer' /&gt;
     &lt;/div&gt;
   )
 }</code></pre>
@@ -1408,32 +1394,32 @@ export const displayState = S.data('none')
 const close = () =&gt; {
   displayState('none')
 }
-export default function SideNav() {
+export default function SideNav () {
   let myside = &lt;div className='sidenav'&gt;
-  &lt;div&gt;&lt;/div&gt;
+    &lt;div /&gt;
 
-  &lt;MenuItem size='840px' &gt;calendar&lt;/MenuItem&gt;
-  &lt;MenuItem size='370px' &gt;readings&lt;/MenuItem&gt;
-  &lt;MenuItem size='60%' &gt;pastors&lt;/MenuItem&gt;
-  &lt;div&gt;&lt;hr/&gt;&lt;/div&gt;
-  &lt;MenuItem size='30%' &gt;confession&lt;/MenuItem&gt;
-  &lt;MenuItem size='30%' &gt;adoration&lt;/MenuItem&gt;
-  &lt;div&gt;&lt;hr/&gt;&lt;/div&gt;
-  &lt;MenuItem size='60%' &gt;sick&lt;/MenuItem&gt;
-  &lt;MenuItem size='60%' &gt;troops&lt;/MenuItem&gt;
-  &lt;MenuItem size='40%' &gt;vocations&lt;/MenuItem&gt;
-  &lt;div&gt;&lt;hr/&gt;&lt;/div&gt;
-  &lt;MenuItem size='40%' &gt;gift&lt;/MenuItem&gt;
-  &lt;MenuItem size='60%' &gt;family&lt;/MenuItem&gt;
-  &lt;MenuItem size='60%' &gt;prayrosary&lt;/MenuItem&gt;
-  &lt;div&gt;&lt;hr/&gt;&lt;/div&gt;
-  &lt;MenuItem size='40%' &gt;knights&lt;/MenuItem&gt;
-  &lt;MenuItem size='40%' &gt;maidens&lt;/MenuItem&gt;
-  &lt;MenuItem size='40%' &gt;firstfriday&lt;/MenuItem&gt;
-  &lt;div onClick={close} style="font-size: 2em; padding: 0 0 0 0.3em;"&gt;{String.fromCharCode(215)}&lt;/div&gt;
+    &lt;MenuItem size='840px' &gt;calendar&lt;/MenuItem&gt;
+    &lt;MenuItem size='370px' &gt;readings&lt;/MenuItem&gt;
+    &lt;MenuItem size='60%' &gt;pastors&lt;/MenuItem&gt;
+    &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
+    &lt;MenuItem size='30%' &gt;confession&lt;/MenuItem&gt;
+    &lt;MenuItem size='30%' &gt;adoration&lt;/MenuItem&gt;
+    &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
+    &lt;MenuItem size='60%' &gt;sick&lt;/MenuItem&gt;
+    &lt;MenuItem size='60%' &gt;troops&lt;/MenuItem&gt;
+    &lt;MenuItem size='40%' &gt;vocations&lt;/MenuItem&gt;
+    &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
+    &lt;MenuItem size='40%' &gt;gift&lt;/MenuItem&gt;
+    &lt;MenuItem size='60%' &gt;family&lt;/MenuItem&gt;
+    &lt;MenuItem size='60%' &gt;prayrosary&lt;/MenuItem&gt;
+    &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
+    &lt;MenuItem size='40%' &gt;knights&lt;/MenuItem&gt;
+    &lt;MenuItem size='40%' &gt;maidens&lt;/MenuItem&gt;
+    &lt;MenuItem size='40%' &gt;firstfriday&lt;/MenuItem&gt;
+    &lt;div onClick={close} style='font-size: 2em; padding: 0 0 0 0.3em;'&gt;{String.fromCharCode(215)}&lt;/div&gt;
   &lt;/div&gt;
   myside.style.display = displayState()
-  return(
+  return (
     myside
   )
 }</code></pre>
@@ -1459,9 +1445,9 @@ import * as Surplus from 'surplus'
 import {textStrings as txt} from './textStrings.js'
 import {langIndex} from './langIndex.js'
 
-export default function Header() {
-  return(
-    &lt;header className="App-header"&gt;
+export default function Header () {
+  return (
+    &lt;header className='App-header'&gt;
       &lt;h1 className='App-title'&gt;{txt.title[langIndex()]}&lt;/h1&gt;
       &lt;h2 className='App-subtitle'&gt;{txt.subtitle[langIndex()]}&lt;/h2&gt;
     &lt;/header&gt;
@@ -1493,9 +1479,9 @@ notices the <code>langIndex()</code> change.</p>
 import * as Surplus from 'surplus'
 import FetchHtmlText from './FetchHtmlText.js'
 
-export default function Intro() {
-  return(
-    &lt;div className="App-intro"&gt;
+export default function Intro () {
+  return (
+    &lt;div className='App-intro'&gt;
       &lt;FetchHtmlText&gt;welcome&lt;/FetchHtmlText&gt;
     &lt;/div&gt;
   )
@@ -1561,14 +1547,14 @@ etc. works fine.
 import * as Surplus from 'surplus'
 import {langIndex} from './langIndex.js'
 
-export default function FetchHtmlText(props) {
-  const lang=['EN','ES'] // Directory names.
-  let node = &lt;div className='loadText'&gt;&lt;/div&gt;
+export default function FetchHtmlText (props) {
+  const lang = ['EN', 'ES'] // Directory names.
+  let node = &lt;div className='loadText' /&gt;
   fetch(`./${lang[langIndex()]}/${props.children[0]}.html`,
-        {cache: "no-cache, no-store, must-revalidate"})
+        {cache: 'no-cache, no-store, must-revalidate'})
     .then(resp =&gt; resp.text())
     .then(text =&gt; node.innerHTML = text)
-  return(node)
+  return (node)
 }</code></pre>
 </div>
 </div>
@@ -1885,35 +1871,35 @@ import {filelist} from '../public/gallery/filelist.js'
  */
 
 // Init image elements and indexes into the picture file list.
-let current = &lt;img width='900'/&gt;,
-    previous = &lt;img/&gt;,
-    next = &lt;img/&gt;,
-    picIndex = S.data(0), // Index to initial picture in array.
-    nextIndex = S.data(1),
-    prevIndex = S.data(filelist.length-1)
+let current = &lt;img width='900' /&gt;,
+  previous = &lt;img /&gt;,
+  next = &lt;img /&gt;,
+  picIndex = S.data(0), // Index to initial picture in array.
+  nextIndex = S.data(1),
+  prevIndex = S.data(filelist.length - 1)
 
 current.position = 'absolute'
 // Hander for right chevron or right swipe.
 let nextPic = () =&gt; {
-  picIndex()  &gt;= filelist.length-1 ? picIndex(0): picIndex(picIndex()+1);
+  picIndex() &gt;= filelist.length - 1 ? picIndex(0) : picIndex(picIndex() + 1)
   previous.src = current.src
   current.src = next.src
-  nextIndex(picIndex() &gt;= filelist.length-1 ? 0 : picIndex()+1)
+  nextIndex(picIndex() &gt;= filelist.length - 1 ? 0 : picIndex() + 1)
   // prefetch next pic
-  fetchPic('./gallery/'+filelist[nextIndex()],next)
+  fetchPic('./gallery/' + filelist[nextIndex()], next)
 }
 // Handler for left click or swipe.
 let prevPic = () =&gt; {
-  picIndex()  &lt;= 0 ? picIndex(filelist.length-1): picIndex(picIndex()-1);
+  picIndex() &lt;= 0 ? picIndex(filelist.length - 1) : picIndex(picIndex() - 1)
   next.src = current.src
   current.src = previous.src
-  prevIndex( picIndex() &lt;= 0 ? filelist.length-1 : picIndex()-1)
-  fetchPic('./gallery/'+filelist[prevIndex()],previous)
+  prevIndex(picIndex() &lt;= 0 ? filelist.length - 1 : picIndex() - 1)
+  fetchPic('./gallery/' + filelist[prevIndex()], previous)
 }
 
-let fetchPic = (name,node) =&gt; { // Pic filename, and node to load into.
-  return (fetch(name,{cache: "public, max-age=0"}) // Cache if possible.
-    .then((res) =&gt; {return res.blob()})
+let fetchPic = (name, node) =&gt; { // Pic filename, and node to load into.
+  return (fetch(name, {cache: 'public, max-age=0'}) // Cache if possible.
+    .then((res) =&gt; { return res.blob() })
     .then((myBlob) =&gt; {
       let url = URL.createObjectURL(myBlob)
       node.src = url
@@ -1922,44 +1908,44 @@ let fetchPic = (name,node) =&gt; { // Pic filename, and node to load into.
   )
 }
 // Initialize current pic first, then others in the background.
-fetchPic('./gallery/'+filelist[picIndex()],current)
-  .then(fetchPic('./gallery/'+filelist[nextIndex()],next))
-  .then(fetchPic('./gallery/'+filelist[prevIndex()],previous))
+fetchPic('./gallery/' + filelist[picIndex()], current)
+  .then(fetchPic('./gallery/' + filelist[nextIndex()], next))
+  .then(fetchPic('./gallery/' + filelist[prevIndex()], previous))
 
 // Use swipe on devices that use touch events. Record swipe start, end.
 let sStart = 0,
-    sEnd = 0
+  sEnd = 0
 let swipeStart = (e) =&gt; {
   sStart = e.touches[0].screenX
 }
 // End of swipe is where we decide action.
 let swipeEnd = (e) =&gt; {
   sEnd = e.changedTouches[0].screenX
-  if(diff(sStart,sEnd) &gt; 45) { // ignore accidental changes
+  if (diff(sStart, sEnd) &gt; 45) { // ignore accidental changes
     sStart &gt; sEnd ? prevPic() : nextPic() // swiped left or right?
   }
 }
 // Difference between start and end of swipe ignoring direction.
-let diff = (start,end) =&gt; {
-  let df = start &gt; end ? start-end : end-start
+let diff = (start, end) =&gt; {
+  let df = start &gt; end ? start - end : end - start
   return df
 }
 // Construct the containing element, with event listeners.
-let left = &lt;span onClick={prevPic} className='chevron left'&gt;&lt;/span&gt;,
-    right = &lt;span onClick={nextPic} className='next chevron right'&gt;&lt;/span&gt;,
-    container = &lt;div className='container'&gt;&lt;/div&gt;,
-    prespan = &lt;span id='previous'&gt;{left}&lt;/span&gt;,
-    nextspan = &lt;span id='next'&gt;{right}&lt;/span&gt;,
-    pic = &lt;div className='picture'&gt;{current}&lt;/div&gt;
+let left = &lt;span onClick={prevPic} className='chevron left' /&gt;,
+  right = &lt;span onClick={nextPic} className='next chevron right' /&gt;,
+  container = &lt;div className='container' /&gt;,
+  prespan = &lt;span id='previous'&gt;{left}&lt;/span&gt;,
+  nextspan = &lt;span id='next'&gt;{right}&lt;/span&gt;,
+  pic = &lt;div className='picture'&gt;{current}&lt;/div&gt;
 
-pic.addEventListener('touchstart',swipeStart)
-pic.addEventListener('touchend',swipeEnd)
+pic.addEventListener('touchstart', swipeStart)
+pic.addEventListener('touchend', swipeEnd)
 
-export default function Pictures() {
+export default function Pictures () {
   pic.appendChild(prespan) // left chevron
   pic.appendChild(nextspan) // right chevron
   container.appendChild(pic)
-  return(container)
+  return (container)
 }</code></pre>
 </div>
 </div>
@@ -1985,19 +1971,18 @@ updated content along with matching text content files.</p>
 <div class="listingblock">
 <div class="title">News.js</div>
 <div class="content">
-<pre class="highlight"><code class="language-jsx" data-lang="jsx">import S from 's-js'
-import * as Surplus from 'surplus'
+<pre class="highlight"><code class="language-jsx" data-lang="jsx">import * as Surplus from 'surplus'
 import {textStrings as txt} from './textStrings.js'
 import Listings from './Listings.js'
 import {langIndex} from './langIndex.js'
 
-export default function News() {
-  return(
+export default function News () {
+  return (
     &lt;div className='news'&gt;
       &lt;div&gt;
         &lt;span className='title'&gt;{txt.news[langIndex()]}&lt;/span&gt;
-        &lt;hr/&gt;
-        &lt;Listings type='news'&gt;&lt;/Listings&gt;
+        &lt;hr /&gt;
+        &lt;Listings type='news' /&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   )
@@ -2044,13 +2029,13 @@ import {textStrings as txt} from './textStrings.js'
 import Listings from './Listings.js'
 import {langIndex} from './langIndex.js'
 
-export default function Events() {
-  return(
+export default function Events () {
+  return (
     &lt;div className='events'&gt;
       &lt;div&gt;
         &lt;span className='title'&gt;{txt.events[langIndex()]}&lt;/span&gt;
-        &lt;hr/&gt;
-        &lt;Listings type='events'&gt;&lt;/Listings&gt;
+        &lt;hr /&gt;
+        &lt;Listings type='events' /&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   )
@@ -2112,9 +2097,8 @@ import * as Surplus from 'surplus'
 import {newsStrings as news} from './newsStrings.js'
 import {eventsStrings as events} from './eventsStrings.js'
 import {langIndex} from './langIndex.js'
-import {modalTitle, modalMsg} from './Modal.js'
+import {modalTitle, modalMsg, modalWidth} from './Modal.js'
 import FetchHtmlText from './FetchHtmlText.js'
-import {modalWidth} from './Modal.js'
 import {displayModal} from './ModalBase.js'
 
 /**
@@ -2122,15 +2106,15 @@ import {displayModal} from './ModalBase.js'
    can use the same component for both, by setting the correct object
    from the props.type.
  */
-export default function Listings(props) {
+export default function Listings (props) {
   /* set a constant that contains the object with strings */
-  const newsEvents = props.type === 'news'? news : events
-  let div = &lt;div&gt;&lt;/div&gt; // One div holds all of the listings.
+  const newsEvents = props.type === 'news' ? news : events
+  let div = &lt;div /&gt; // One div holds all of the listings.
   Object.keys(newsEvents)
         .forEach(key =&gt; {
           let clickMe = () =&gt; { // Each listing gets its own click handler.
             let html = &lt;FetchHtmlText&gt;{key}&lt;/FetchHtmlText&gt;
-            if(window.screen.width &gt; 760) { // Accomodate small screens.
+            if (window.screen.width &gt; 760) { // Accomodate small screens.
               modalWidth('60%')
             } else {
               modalWidth('98%')
@@ -2142,13 +2126,13 @@ export default function Listings(props) {
           let child = &lt;div className='listing' onClick={clickMe}&gt;
           {newsEvents[key][langIndex()]}
           &lt;/div&gt;
-          let hr = &lt;hr/&gt;
-          let date = &lt;div className='date'&gt;{newsEvents[key][langIndex()+2]}&lt;/div&gt;
+          let hr = &lt;hr /&gt;
+          let date = &lt;div className='date'&gt;{newsEvents[key][langIndex() + 2]}&lt;/div&gt;
           div.appendChild(child)
           div.appendChild(date)
           div.appendChild(hr)
         })
-  return(div)
+  return (div)
 }</code></pre>
 </div>
 </div>
@@ -2177,10 +2161,9 @@ switched, because it doesn’t vary. The rest of the text changes.</p>
 import * as Surplus from 'surplus'
 import {textStrings as txt} from './textStrings.js'
 import GetLabeledText from './GetLabeledText.js'
-import {labeledText as lt} from './labeledText.js'
 
-export default function Footer(props) {
-  return(
+export default function Footer (props) {
+  return (
     &lt;div className='footer'&gt;
       &lt;div className='label address'&gt;
         &lt;div className='footertitle'&gt;{txt.title[0]}&lt;/div&gt;
@@ -2230,12 +2213,11 @@ import * as Surplus from 'surplus'
 import {langIndex} from './langIndex.js'
 import {labeledText as lt} from './labeledText.js'
 
-export default function GetLabeledText(props) {
-  let textNode=&lt;div className='msg'&gt;&lt;/div&gt;
-  let label=props.children
-  let msg=lt[label]
-  textNode.innerHTML = lt[label][langIndex()+2]
-  return(
+export default function GetLabeledText (props) {
+  let textNode = &lt;div className='msg' /&gt;
+  let label = props.children
+  textNode.innerHTML = lt[label][langIndex() + 2]
+  return (
     &lt;div className='labeledtext'&gt;
       &lt;div className='labeled'&gt;{lt[label][langIndex()]}&lt;/div&gt;
       {textNode}
@@ -2250,7 +2232,7 @@ export default function GetLabeledText(props) {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-12 08:55:01 CST
+Last updated 2018-01-12 11:50:05 CST
 </div>
 </div>
 <script src="prism/prism.js"></script>
