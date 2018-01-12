@@ -2,11 +2,15 @@
 :source-highlighter: rouge
 :icons: font
 :docinfo1:
-:toc: left
+:toc:
+:toc-placement!:
+
 [[responsive-web-app-with-surplus]]
 = Responsive Web App with Surplus
 
 React is good. Surplus is better, faster and easier to use.
+
+toc::[]
 
 [[intro]]
 == Intro
