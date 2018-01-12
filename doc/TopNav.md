@@ -16,7 +16,7 @@ underlying window is scrolled up more than 30px, and removed when not.
 
 NOTE: The `window.addEventListener` event handler is plain old
 JavaScript and DOM. Platforms with virtual DOMs like `React` can't do
-this directly.
+this directly, but `Surplus` doesn't get in the way.
 
 Menu elements use `onClick` to act as buttons, and either produce
 dropdown menus or invoke actions.
