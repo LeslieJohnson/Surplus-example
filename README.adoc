@@ -242,7 +242,7 @@ the app, compressed.
 [[modules]]
 = Modules
 
-include::App.adoc[]
+include::Surplus-example/doc/App.adoc[]
 
 include::langIndex.adoc[]
 
