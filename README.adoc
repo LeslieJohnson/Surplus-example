@@ -240,9 +240,9 @@ the app, compressed.
 ----
 
 [[modules]]
-= Modules
+== Modules
 
-include::https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/App.adoc[]
+link::https://github.com/LeslieJohnson/Surplus-example/blob/master/doc/App.adoc[]
 
 include::langIndex.adoc[]
 
