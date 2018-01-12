@@ -1,10 +1,10 @@
 ## Listings.js
-Displays a list of News or Events. Since they share the same format, we
-can use the same component for both, by setting the correct object from the props.type.
+Displays a list of News or Events. Since they share the same format, I
+use the same component for both by setting the correct object from the props.type.
 
 This is much like other menus, except that it has some extra
 information to display. Because `News` and `Events` are so similar,
-they share this code.
+they share this component.
 
 First `props.type` is used to set `newsEvents` to contain the
 appropriate text objects. The `newsStrings.js` and `eventsString.js`
