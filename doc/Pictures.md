@@ -24,6 +24,8 @@ and assigning a resource to its `src`, like so:
 let mypic = <img/>
 mypic.src = 'pictures/mypic.jpg'
 ```
+Here `mypic` is a node on the browser, and `mypic.jpg` is a file
+that's loaded over a network from the server.
 
 The problem with this approach is that loading new images, which can
 be large, takes too much time for a mobile
@@ -31,54 +33,53 @@ device on a slow network. Preloading images in the background before
 they're displayed is better.
 
 ### Prefetching images
-Prefetching all images would be too much to handle, so we only use three.
-`current`, `previous` and `next` are Surplus node elements that will
+Prefetching all images would be too much to handle, so I only use three.
+`current`, `previous` and `next` are Surplus nodes that will
 contain the images for display.
 
-`nextPic()` and `prevPic()` functions select a new picture as the user
-cycles through the `filelist` array by clicking on chevrons or swiping
-on touch-sensitive devices. The `picIndex()` cycles through the array
-to make it seem circular to the user.
-
-NOTE: Properties on Surplus nodes may be added and modified, as in
+NOTE: Properties on Surplus nodes may be added and modified directly, as in
 `current.position = 'absolute'`.
+
+The `nextPic()` and `prevPic()` functions select a new picture as the
+user cycles through the `filelist` array by clicking on chevrons or
+swiping on touch-sensitive devices, and updating the array index
+`picIndex()`, which cycles through the array to make it seem circular to the
+user. The same is done for `prevIndex()` and `nextIndex()`.
 
 With each click (or swipe) a new image is loaded. But the trick here
 is that the newly loading image isn't the one the user sees. The user
 sees an image that's *already* loaded, while a new one is fetched
 asynchronously in the background.
 
-The user can only select the previous or next image, as
-there is no option for random selection. Prefetching these two images
-makes sense. The users could easily outrun the prefetch, but 
-hopefully they will spend enough time looking at the selected pic to
-allow the prefetch to catch up.
+The user can only select the previous or next image, as there is no
+option for random selection. Prefetching these two unseen images
+anticipates the user's next selection in either direction. This forms
+a three image sliding window that moves across the array of pictures,
+with the oldest dropped, the newest preloaded, and the user viewing
+the one in the middle.
 
-NOTE: Outrunning the prefetch doesn’t hurt, but clicking or swiping has no effect until the image is loaded.
+The users could easily outrun the prefetch, but hopefully they will
+spend enough time looking at the selected pic to allow the prefetch to
+catch up. Outrunning the prefetch doesn’t hurt, but clicking or
+swiping has no effect until the image is loaded.
 
-The current view is `current`, and `previous` and `next` are
-initialized to contain their appropriate images. 
+The `current`, `previous` and `next` views are initialized to contain
+their respective images before any user interaction.
 
-In `nextPic()` `next.src` is tested to see if the image is loaded,
-which should always be true if everything goes right. When `nextPic()` is invoked, the
-current `current` then becomes `previous` without any other action. We
-know that it's already been loaded. In the same way, `next` image
-content is copied to `current`, and `next` is given a new node with
-empty content to be loaded by `fetchPic()`.
-
-NOTE: The `current` node doesn't change. Instead, `current.src` gets new content. The
-same is not true for `previous` and `next`, whose old nodes will be
-garbage collected, avoiding memory leaks.
-
-The `picIndex()` is updated, and `next` has a new image loaded
-asynchronously in the background.
+When `nextPic()` is invoked, the `current.src` image is copied to
+`previous.src`. We know that it's already been loaded. In the same
+way, `next` image content is copied to `current`, and `next.src` is
+given new content by `fetchPic()`. The `current` node doesn't
+change. Instead, `current.src` gets new content. Likewise with
+`previous` and `next`. The indexes for the three nodes are updated,
+and `next` has a new image loaded asynchronously in the background.
 
 `prevPic()` is identical to `nextPic()`, except it cycles in the other direction.
 
 `fetchPic()` does what it says, using ES6 `fetch`, which returns a
-`promise`. Note that the actual update is done inside this function
-because that's how promises work. This allows the operation to work in
-the background, asynchronously.
+promise. Note that the actual update is done inside this function
+closure after it returns. This allows the operation to work in the
+background, asynchronously.
 
 When the page first loads, the user hasn't yet selected an image, so
 nothing would be displayed without initialization. We initialize our
@@ -119,8 +120,8 @@ handlers like `onClick` are effectively passed through, but others
 have to directly attached to a DOM node. I tried `onTouch` but it had
 no effect, so I went down a level of abstraction to capture the DOM event.
 
-TIP: Always try to understand at least one level of abstraction below
-the one you're using. This is true for all software development.
+TIP: I always try to understand at least one level of abstraction below
+the one I'm using. It's a good rule of thumb for all software development.
 
 With Surplus (and other JSX implementations) this is done by creating
 a JavaScript variable and assigning a Surplus node to it, like so:
