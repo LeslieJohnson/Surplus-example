@@ -1,0 +1,23 @@
+:doctype: book
+:source-highlighter: rouge
+:icons: font
+:docinfo1:
+:toc: left
+[[footer.js]]
+== Footer.js
+
+Returns a `div` containing text labels and brief content.
+
+See the `GetLabeledText` component for more detail.
+
+The first `footertitle` entry doesn’t change when languages are
+switched, because it doesn’t vary. The rest of the text changes.
+
+=== Source
+
+.Footer.js
+[source,jsx,numbered]
+----
+include::src/Footer.js[]
+----
+

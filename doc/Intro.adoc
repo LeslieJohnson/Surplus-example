@@ -1,0 +1,23 @@
+:doctype: book
+:source-highlighter: rouge
+:icons: font
+:docinfo1:
+:toc: left
+[[intro.js]]
+== Intro.js
+
+The `Intro` component displays an introduction message taken from the
+`welcome.html` file in the selected language.
+
+At first glance it would appear that the message doesn’t change when
+another language is selected, but it does because `FetchHtmlText`
+notices the `langIndex()` change.
+
+=== Source
+
+.Intro.js
+[source,jsx,numbered]
+----
+include::src/Intro.js[]
+----
+

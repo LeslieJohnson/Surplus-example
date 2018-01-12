@@ -1,0 +1,18 @@
+:doctype: book
+:source-highlighter: rouge
+:icons: font
+:docinfo1:
+:toc: left
+[[textstrings.js]]
+== textStrings.js
+
+One big object with keys and string arrays.
+
+=== Source
+
+.textStrings.js
+[source,jsx,numbered]
+----
+include::src/textStrings.js[]
+----
+
