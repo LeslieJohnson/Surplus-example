@@ -6,19 +6,20 @@ React is good. Surplus is better, faster and easier to use.
 
 This is a JavaScript webapp using Surplus and S as a development
 framework with no other libraries or platforms. It's modular with
-purely functional components. No classes, and no `this` anywhere. It's
-all built from scratch. 
+purely functional components. No classes, and no `this` or `new`
+anywhere. It's all built from scratch.
 
-My goal was to make a lightweight, fast and mobile-friendly reactive
-app without any server code. The result is 226 lines of source code,
-(including comments, minus text files), in 15 ES6
-modules. That's less than half the lines in the CSS file. After
-compression, the app bundle is 25K.
+This small app is not just a demo, but a working SPA with complete
+documentation and source code. It has asynchronous resource loading,
+image prefetch and cache, touch event handling and dynamic bilingual language
+selection for all menus and text across the app.
 
-It's a Single Page App with lots of documentation and
-annotations. It's not a demo, but a real working app.
+My goal was to make a simple, fast and mobile-friendly reactive app
+without any server code. The result is 226 lines of source code,
+(including comments, minus text files), in 15 ES6 modules. After
+compression, the app bundle is about 25K, not gzipped.
 
-It's *not* an `S` tutorial, but shows the power of `S` for tracking
+NOTE: It's *not* an `S` tutorial, but shows the power of `S` for tracking
 and updating data bindings in the DOM, and `Surplus` as a component
 framework. Take a look at [S](https://github.com/adamhaile/S) and
 [Surplus](https://github.com/adamhaile/surplus) on Github.
@@ -34,7 +35,8 @@ changes, \“S automatically updates downstream computations\” says the
 Github page.
 
 `Surplus` adds JSX web views to `S` applications, according to its
-Github page. To me, it looks like a less complex `React` with better functionality.
+docs. To me, it looks like a less complex `React` with better
+functionality and can be a first-rate development framework.
 
 ### S.js
 
@@ -66,14 +68,16 @@ footprint is small and it consistently runs the fastest
 [benchmarks](https://github.com/krausest/js-framework-benchmark) of
 any platform.
 
-Read on and I'll show how it works in small but complete real app.
-
 ## Hello World -> Hola Mundo
 There are nine `S.data()` functions in the app, used for modal and
-navbar states, indexes into data arrays, and `CSS` property
-values. When a new value (data signal) is passed to one of these
-functions, `S` data binding updates any DOM properties that depend on
-them, in all components.
+navbar display states, indexes into data arrays, file names, and `CSS`
+property values. When a new value (data signal) is passed to one of
+these functions, `S` data binding updates any DOM properties that
+depend on them, in all components.
+
+NOTE: This example (and this whole app) barely hints at the
+computational power of `S`. Using `S` to update elements by
+referencing a single value is as simple as can be.
 
 For example, one `S.data()` value is used to index into dozens of
 JavaScript arrays that contain text strings like so:
@@ -93,31 +97,31 @@ const otherText = ['world','mundo']
 langIndex(1) // DOM updates, now displays 'hola mundo'
 ```
 
-TIP: Notice the C-style comment inside braces. This is how to
+TIP: Notice the C-style comment inside braces. This is a way to
 put comments within JSX, and is not Surplus-specific.
 
 `langIndex` is a monad used to get (and change) the language index
-dynamically throughout the app. When it's used inside a component or
+dynamically throughout the app. Wherever it's used inside a component or
 element, `S` adds the element as a subscriber internally. When the
 value inside the monad changes, each subscriber is notified and the
 element is updated. This is the \‘reactive\’ part of the app.
 
-Changing this index results in another text string *in every DOM
-element* that uses that index to get a string value. This can be a
+Changing this index results in an display update *in every DOM
+element* that uses the index to get a string value. This can be a
 text node, a `CSS` class value, an `href` string or anything else. My
 trivial example shows one `div`, but if a hundred elements depended on
 this index, they would all change. The `langIndex()` is `S`, and the
 `div` in JSX is `Surplus`.
 
-Because there is no virtual DOM, there are no Component Lifecycle
-states, and no Synthetic Events. There *are* Components that, like
-React, start with a capital letter. For compatibility with React,
-keywords like `className` and `onClick` are aliased, but need not
-be. Native DOM event handlers, classes, properties etc. work with
-`Surplus` components seamlessly.
+Because there is no virtual DOM, there are no Component Lifecycles,
+and no Synthetic Events. There *are* Components that, like React,
+start with a capital letter. For compatibility with React, keywords
+like `className` and `onClick` are aliased, but need not be. `props`
+are passed in the same way as React. Native DOM event handlers,
+classes, properties etc. work with `Surplus` components seamlessly.
 
 `Surplus` components look like the pure functional components in
-`React` and `Inferno`. `JSX` is actually a standard separate from
+`React` and `Inferno`. `JSX` is a standard separate from
 `React`, and `Surplus` follows the standard.
 
 ## What is this App?
@@ -128,33 +132,37 @@ using the string array indexes described above, plus separate content
 files. The live version can be seen at
 [stleocenterville.org](http://stleocenterville.org).
 
-I'm the only developer. The server is from Network Solutions, which
-doesn't run `node`, so all code runs on the client. I wanted a
-public-facing open source app to demonstrate `S` and `Surplus`, and
-to show as an example of my work.
+I inherited a Network Solutions server which doesn't run `node`, so
+all code runs on the client. I wanted to provide a website for the
+parish, to demonstrate `S` and `Surplus`, and have a public-facing
+open source app as an example of my work. It's a successor to a
+previous version I wrote using `AngularJS`, and I started this
+version's development using `React`, then `Inferno`, then `Surplus`.
 
-It's pretty basic, with standard dropdown menus, a sidenav bar,
-headers, footers, modals, event calendar and a picture
+It has standard dropdown menus, a sidenav bar,
+header, footer, modals, event calendar and a picture
 slideshow. There are 15 Components, each in a separate ES6
 module. Other JavaScript files have text data and there is a directory
-in each language for `html` content files. A `gallery` directory has
-`jpg` pictures. A `utils` directory has some helper scripts for
-generating `html` files from templates.
+in each language for html and text content files. A `gallery` directory has
+`jpg` pictures. A `util` directory has some helper scripts for
+generating `html` files from templates, and for building this document
+from Markdown files in the `doc` directory.
 
-`App.css` was written by me from scratch, except where noted. I spent
-a lot of effort on this, but details about it are outside of the scope
-of this work. 
+`App.css` was written by me from scratch, except where noted. Much of my
+effort went into this, but details are outside of the scope of this
+document.
 
 ## Development environment
 
-I use standard JavaScript developer tools, like `git`, `npm`, `webpack`
-with `babel` and others. The `package.json` and `webpack.config.js`
-should look familiar to any modern developer.
+I use standard command line and scripted JavaScript developer tools,
+like `git`, `npm`, `webpack` with `babel`, `bash` and others. The
+`package.json` and `webpack.config.js` should look familiar to any
+modern developer.
 
 Emacs is my IDE. Emacs does everything an IDE does if it's setup
 right.
 
-TIP: Get the `web-mode` Emacs package and use it for `html, js, jsx,
+TIP: I use the `web-mode` Emacs package for `html, js, jsx,
 css` files along with `aggressive-indent-mode`. They both understand mixed
 modes like embedded JSX and CSS in HTML. Add `fly-check`, and you'll
 have automatic indenting and formatting, syntax highlighting and error
@@ -168,9 +176,9 @@ since before kernel version 1.0 when Linus Torvalds was still a grad
 student and `usenet` was the thing. Unix before that.
 
 NOTE: I'm not a Windows developer, and development using `node`
-command line tools on Windows is not my *forte*. Google and Stack
-Overflow should help if you ~~are forced to use~~ prefer Windows for
-development.
+command line tools on Windows is not my specialty. Google and
+StackOverflow should help if you ~~are forced to use~~ prefer Windows
+for development.
 
 # Source Code
 
