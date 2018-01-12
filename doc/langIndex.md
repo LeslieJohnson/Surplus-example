@@ -13,8 +13,7 @@ binding.
 The `toggleLang` function does what it says. It's invoked from the
 `TopNav` menubar at the rightmost position.
 
-Both of these functions are exported, and `langIndex()` is used by
-most other components.
+`langIndex()` is used by most other components.
 
 NOTE: This is not a component, but just a module with exports. Note
 that it starts with lower case, which `Surplus` uses to distinguish
