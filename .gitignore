@@ -6,7 +6,6 @@ public/ES
 public/EN
 public/bundle.js
 todo.org
-doc/*.adoc
 doc/*.html
 doc/*.pdf
 doc/src
