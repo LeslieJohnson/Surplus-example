@@ -1,4 +1,3 @@
-import S from 's-js'
 import * as Surplus from 'surplus'
 import MenuItem from './MenuItem.js'
 /**
@@ -8,12 +7,12 @@ import MenuItem from './MenuItem.js'
    and the number is unlimited.
    See TopNav for details and examples.
  */
-export default function Dropdown(props) {
-  let content = <div className='dropdown-content'></div>
+export default function Dropdown (props) {
+  let content = <div className='dropdown-content' />
   // Fill in content element with child menus.
   if (props.children.length) {
     props.children.forEach(p => {
-      if(p.size) { // Prop has a width parameter.
+      if (p.size) { // Prop has a width parameter.
         content.appendChild(
           <MenuItem size={p.size}>{p.textContent}</MenuItem>
         )
@@ -25,10 +24,10 @@ export default function Dropdown(props) {
     })
   }
   return (
-  <div className='dropdown'>
-    <div className='dropbtn'>{props.name}
-      {content}
+    <div className='dropdown'>
+      <div className='dropbtn'>{props.name}
+        {content}
+      </div>
     </div>
-  </div>
   )
 }

@@ -17,13 +17,13 @@ import Footer from './Footer.js'
 let view = S.root(() =>
   <div className='App'>
     <div className='main'>
-      <TopNav/>
-      <Header/>
-      <Intro/>
-      <Pictures/>
-      <News/>
-      <Events/>
-      <Footer/>
+      <TopNav />
+      <Header />
+      <Intro />
+      <Pictures />
+      <News />
+      <Events />
+      <Footer />
     </div>
   </div>
 )
