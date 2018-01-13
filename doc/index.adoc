@@ -22,8 +22,8 @@ image prefetch and cache, touch event handling and dynamic bilingual
 language selection for all menus and text across the app.
 
 My goal was to make a simple, fast and mobile-friendly reactive app
-without any server code. The result is 491 lines of source code,
-(including comments, excluding text files), in 16 ES6 modules. After
+without any server code. The result is 403 lines of source code,
+(excluding comments and text files), in 16 ES6 modules. After
 compression, the app bundle is about 25K, not gzipped.
 
 NOTE: It’s _not_ an `S` tutorial, but shows the power of `S` for
