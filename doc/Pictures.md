@@ -98,9 +98,7 @@ need.
 
 TIP: Chrome's debugger let me examine events for clues about how to use
 them. Chrome on my Linux laptop doesn't support touch events, but
-their debugger simulates them if a smartphone emulator is selected. (I
-don't know how to bring up the debugger on a smartphone, if it's even
-possible.)
+their debugger simulates them if a smartphone emulator is selected.
 
 I use `swipeStart()` and `swipeEnd()` to capture the coordinates for the
 user action. A little `diff` helper tells me how far across the screen
