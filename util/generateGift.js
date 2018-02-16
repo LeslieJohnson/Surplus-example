@@ -2,11 +2,11 @@ let {str} = require('./giftText.js')
 //import {giftText as str} from './giftText.js'
 
 /** 
-   Find the previous week's Sunday and format it.
+   Find previous two week's ago Sunday and format it.
  */
 let date = new Date()
 let dow = date.getDay() // day of week
-date.setDate(date.getDate() - dow)
+date.setDate(date.getDate() - (dow + 7))
 let myDate = date.toString()
 let mda = myDate.split(' ')
 let sunday = `${mda[0]} ${mda[1]} ${mda[2]}, ${mda[3]}`
