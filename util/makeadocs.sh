@@ -14,7 +14,7 @@ do
     then
         src=$(<src/$name.js)
         tag=$'\n[source,jsx,numbered]'
-        start=$'\n=== Source\n\n'
+        start=$'\n\n'
         mid=$'\n----\n'"$src"
         end=$'\n----\n'
         echo "$start.${name}.js$tag$mid$end" >>$name.adoc
