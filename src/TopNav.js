@@ -26,8 +26,7 @@ export default function TopNav () {
     {/* Horizontal menu, starting with the hamburger 'button'. */}
     <ul>
       <span className='menu' onClick={toggleSide}>
-        <li className='burger dropbtn' >☰</li>
-        <li>{txt.menu[langIndex()]}<Dropdown /></li>
+        <li className='burger dropbtn' >☰&nbsp;</li>
       </span>
       <li>
         {/* Dropdown children invoke modals on selection. */}
