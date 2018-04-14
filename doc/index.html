@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.6.1">
+<meta name="generator" content="Asciidoctor 1.5.6.2">
 <title>Responsive Web App with Surplus</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -433,120 +433,58 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
  }
 </style>
 </head>
-<body id="responsive-web-app-with-surplus" class="book toc2 toc-left">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Responsive Web App with Surplus</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#intro">Intro</a></li>
-<li><a href="#s-and-surplus">S and Surplus</a>
+<li><a href="#_intro">Intro</a></li>
+<li><a href="#_s_and_surplus">S and Surplus</a>
 <ul class="sectlevel2">
-<li><a href="#s.js">S.js</a></li>
-<li><a href="#surplus">Surplus</a></li>
+<li><a href="#_s_js">S.js</a></li>
+<li><a href="#_surplus">Surplus</a></li>
 </ul>
 </li>
-<li><a href="#hello-world---hola-mundo">Hello World &#8594; Hola Mundo</a></li>
-<li><a href="#what-is-this-app">What is this App?</a></li>
-<li><a href="#development-environment">Development environment</a></li>
-<li><a href="#source-code">Source Code</a>
+<li><a href="#_hello_world_hola_mundo">Hello World &#8594; Hola Mundo</a></li>
+<li><a href="#_what_is_this_app">What is this App?</a></li>
+<li><a href="#_development_environment">Development environment</a></li>
+<li><a href="#_source_code">Source Code</a>
 <ul class="sectlevel1">
-<li><a href="#index.html">index.html</a></li>
+<li><a href="#_index_html">index.html</a></li>
 </ul>
 </li>
-<li><a href="#modules">Modules</a>
+<li><a href="#_modules">Modules</a>
 <ul class="sectlevel1">
-<li><a href="#app.js">App.js</a>
+<li><a href="#_app_js">App.js</a>
 <ul class="sectlevel2">
-<li><a href="#modules-and-components">Modules and Components</a></li>
-<li><a href="#_source">Source</a></li>
+<li><a href="#_modules_and_components">Modules and Components</a></li>
 </ul>
 </li>
-<li><a href="#langindex.js">langIndex.js</a>
+<li><a href="#_langindex_js">langIndex.js</a></li>
+<li><a href="#_topnav_js">TopNav.js</a></li>
+<li><a href="#_dropdown_js">Dropdown.js</a></li>
+<li><a href="#_menuitem_js">MenuItem.js</a></li>
+<li><a href="#_modalbase_js">ModalBase.js</a></li>
+<li><a href="#_modal_js">Modal.js</a></li>
+<li><a href="#_sidenav_js">SideNav.js</a></li>
+<li><a href="#_header_js">Header.js</a></li>
+<li><a href="#_intro_js">Intro.js</a></li>
+<li><a href="#_fetchhtmltext_js">FetchHtmlText.js</a></li>
+<li><a href="#_pictures_js">Pictures.js</a>
 <ul class="sectlevel2">
-<li><a href="#_source_2">Source</a></li>
+<li><a href="#_the_image_files">The image files</a></li>
+<li><a href="#_displaying_an_image_the_easy_way">Displaying an image the easy way</a></li>
+<li><a href="#_prefetching_images">Prefetching images</a></li>
+<li><a href="#_swipe_event_handler">Swipe event handler</a></li>
+<li><a href="#_attaching_the_touch_event_handler">Attaching the touch event handler</a></li>
 </ul>
 </li>
-<li><a href="#topnav.js">TopNav.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_3">Source</a></li>
-</ul>
-</li>
-<li><a href="#dropdown.js">Dropdown.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_4">Source</a></li>
-</ul>
-</li>
-<li><a href="#menuitem.js">MenuItem.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_5">Source</a></li>
-</ul>
-</li>
-<li><a href="#modalbase.js">ModalBase.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_6">Source</a></li>
-</ul>
-</li>
-<li><a href="#modal.js">Modal.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_7">Source</a></li>
-</ul>
-</li>
-<li><a href="#sidenav.js">SideNav.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_8">Source</a></li>
-</ul>
-</li>
-<li><a href="#header.js">Header.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_9">Source</a></li>
-</ul>
-</li>
-<li><a href="#intro.js">Intro.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_10">Source</a></li>
-</ul>
-</li>
-<li><a href="#fetchhtmltext.js">FetchHtmlText.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_11">Source</a></li>
-</ul>
-</li>
-<li><a href="#pictures.js">Pictures.js</a>
-<ul class="sectlevel2">
-<li><a href="#the-image-files">The image files</a></li>
-<li><a href="#displaying-an-image-the-easy-way">Displaying an image the easy way</a></li>
-<li><a href="#prefetching-images">Prefetching images</a></li>
-<li><a href="#swipe">Swipe</a></li>
-<li><a href="#attaching-the-touch-event-handler">Attaching the touch event handler</a></li>
-<li><a href="#_source_12">Source</a></li>
-</ul>
-</li>
-<li><a href="#news.js">News.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_13">Source</a></li>
-</ul>
-</li>
-<li><a href="#events.js">Events.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_14">Source</a></li>
-</ul>
-</li>
-<li><a href="#listings.js">Listings.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_15">Source</a></li>
-</ul>
-</li>
-<li><a href="#footer.js">Footer.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_16">Source</a></li>
-</ul>
-</li>
-<li><a href="#getlabeledtext.js">GetLabeledText.js</a>
-<ul class="sectlevel2">
-<li><a href="#_source_17">Source</a></li>
-</ul>
-</li>
+<li><a href="#_news_js">News.js</a></li>
+<li><a href="#_events_js">Events.js</a></li>
+<li><a href="#_listings_js">Listings.js</a></li>
+<li><a href="#_footer_js">Footer.js</a></li>
+<li><a href="#_getlabeledtext_js">GetLabeledText.js</a></li>
 </ul>
 </li>
 </ul>
@@ -556,12 +494,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>React is good. Surplus is better, faster and easier to use.</p>
+<p>By <a href="http://les-johnson.com">Leslie Johnson</a></p>
+</div>
+<div class="paragraph">
+<p>Surplus offers a faster, simpler approach to Reactive web app
+development than React.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="intro">Intro</h2>
+<h2 id="_intro">Intro</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a JavaScript webapp using Surplus and S as a development
@@ -573,7 +515,8 @@ all built from scratch.</p>
 <p>This small app is not just a demo, but a working SPA with complete
 documentation and source code. It has asynchronous resource loading,
 image prefetch and cache, touch event handling and dynamic bilingual
-language selection for all menus and text across the app.</p>
+language selection for all menus and text across the app. This document
+is best read while looking at the <a href="http://stleocenterville.org">live app.</a></p>
 </div>
 <div class="paragraph">
 <p>My goal was to make a simple, fast and mobile-friendly reactive app
@@ -599,7 +542,7 @@ and <a href="https://github.com/adamhaile/surplus">Surplus</a> on Github.
 </div>
 </div>
 <div class="sect1">
-<h2 id="s-and-surplus">S and Surplus</h2>
+<h2 id="_s_and_surplus">S and Surplus</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><a href="https://github.com/adamhaile/S">S</a> and
@@ -617,7 +560,7 @@ To me, it looks like a less complex React with better functionality and
 can be a first-rate development framework.</p>
 </div>
 <div class="sect2">
-<h3 id="s.js">S.js</h3>
+<h3 id="_s_js">S.js</h3>
 <div class="paragraph">
 <p>The idea behind S is wonderfully simple. There is no virtual DOM, but
 data changes are tracked and the <em>real</em> DOM is updated accordingly. S
@@ -640,7 +583,7 @@ functional.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="surplus">Surplus</h3>
+<h3 id="_surplus">Surplus</h3>
 <div class="paragraph">
 <p><code>Surplus</code> uses JSX to create Components that use <code>S</code>, and has
 React-friendly keyword aliases and conventions. This is another big plus
@@ -654,7 +597,7 @@ platform.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="hello-world---hola-mundo">Hello World &#8594; Hola Mundo</h2>
+<h2 id="_hello_world_hola_mundo">Hello World &#8594; Hola Mundo</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>There are nine <code>S.data()</code> functions in the app, used for modal and
@@ -739,7 +682,7 @@ Inferno. JSX is a standard separate from React which Surplus follows.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="what-is-this-app">What is this App?</h2>
+<h2 id="_what_is_this_app">What is this App?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>It’s a website for my local Catholic church. The users like up-to-date
@@ -774,12 +717,13 @@ document.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="development-environment">Development environment</h2>
+<h2 id="_development_environment">Development environment</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>I use standard command line and scripted JavaScript developer tools,
-like git, npm, webpack with babel, bash and others. The <code>package.json</code>
-and <code>webpack.config.js</code> should look familiar to any modern developer.</p>
+like <code>git</code>, <code>npm</code>, <code>webpack</code> with <code>babel</code>, <code>bash</code> and others. The
+<code>package.json</code> and <code>webpack.config.js</code> should look familiar to any
+modern developer.</p>
 </div>
 <div class="paragraph">
 <p>Emacs is my IDE. Emacs does everything an IDE does if it’s setup right.</p>
@@ -824,9 +768,9 @@ should help if you prefer Windows for development.
 </div>
 </div>
 </div>
-<h1 id="source-code" class="sect0">Source Code</h1>
+<h1 id="_source_code" class="sect0">Source Code</h1>
 <div class="sect1">
-<h2 id="index.html">index.html</h2>
+<h2 id="_index_html">index.html</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The root node is appended to the document body in a minimal
@@ -858,9 +802,9 @@ the app, compressed.</p>
 </div>
 </div>
 </div>
-<h1 id="modules" class="sect0">Modules</h1>
+<h1 id="_modules" class="sect0">Modules</h1>
 <div class="sect1">
-<h2 id="app.js">App.js</h2>
+<h2 id="_app_js">App.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>App is the entry point and does little else other than import component
@@ -869,7 +813,7 @@ create the main display page, which in this Single Page Application is
 the whole app (most of which is hidden at this point).</p>
 </div>
 <div class="sect2">
-<h3 id="modules-and-components">Modules and Components</h3>
+<h3 id="_modules_and_components">Modules and Components</h3>
 <div class="paragraph">
 <p>Though the app is made of purely modular components, most were isolated
 from other code as my development evolved. Eventually, everything became
@@ -887,9 +831,6 @@ components, out of 15 in all.</p>
 <p>All components in my app are ES6 modules, in addition to modules that
 are not components, such as objects with text arrays.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_source">Source</h3>
 <div class="listingblock">
 <div class="title">App.js</div>
 <div class="content">
@@ -929,7 +870,7 @@ document.body.appendChild(view)</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="langindex.js">langIndex.js</h2>
+<h2 id="_langindex_js">langIndex.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This monad is used by every component that displays text in more than
@@ -948,7 +889,7 @@ Compare this to <code>React</code> Component’s <code>setState()</code>. With R
 each component has its own state, and its child components only update
 theirs if <code>forceUpdate</code> is passed to <code>setState</code>. Here, any component can
 use <code>langIndex</code> simply by importing it. <code>S</code> takes care of the data
-binding.
+binding. [Update: I see React’s <code>context</code> is now un-deprecated.]
 </td>
 </tr>
 </table>
@@ -975,8 +916,6 @@ it’s neither, but Surplus won’t treat it as a Component.
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_source_2">Source</h3>
 <div class="listingblock">
 <div class="title">langIndex.js</div>
 <div class="content">
@@ -989,9 +928,8 @@ export const toggleLang = () =&gt; {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="topnav.js">TopNav.js</h2>
+<h2 id="_topnav_js">TopNav.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a relatively simple Top Navigation bar, or rather a misnamed
@@ -1047,8 +985,6 @@ functions.</p>
 exports the S data function <code>langIndex()</code>. A click on this element
 changes all displayed text to another language.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_3">Source</h3>
 <div class="listingblock">
 <div class="title">TopNav.js</div>
 <div class="content">
@@ -1071,17 +1007,16 @@ const toggleSide = () =&gt; {
   displayState() === 'block' ? displayState('none') : displayState('block')
 }
 /** TopNav is fixed at the top of the page, so it acts an an anchor to
-   Components that don't scroll with the rest of the page content. So
-   it has a dual purpose, the other being to provide dropdown menus,
-   as provided by its child component Dropdown with parameters and children.
- */
+   Components that don't scroll with the rest of the page content.  It
+   has a dual purpose, one being a navbar displayed at the top of the
+   page, and the other anchoring dropdown menus, as provided by
+   its child component Dropdown with parameters and children.  */
 export default function TopNav () {
   return (&lt;nav className='topNav'&gt;
     {/* Horizontal menu, starting with the hamburger 'button'. */}
     &lt;ul&gt;
       &lt;span className='menu' onClick={toggleSide}&gt;
-        &lt;li className='burger dropbtn' &gt;☰&lt;/li&gt;
-        &lt;li&gt;{txt.menu[langIndex()]}&lt;Dropdown /&gt;&lt;/li&gt;
+        &lt;li className='burger dropbtn' &gt;☰&amp;nbsp;&lt;/li&gt;
       &lt;/span&gt;
       &lt;li&gt;
         {/* Dropdown children invoke modals on selection. */}
@@ -1111,9 +1046,8 @@ export default function TopNav () {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="dropdown.js">Dropdown.js</h2>
+<h2 id="_dropdown_js">Dropdown.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><code>TopNav</code> uses this for creating a list of dropdown menus in its menubar.</p>
@@ -1136,8 +1070,6 @@ content. See <code>MenuItem</code> for details.</p>
 <code>props.size</code>. This width will be overridden for small screens like
 mobile devices.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_4">Source</h3>
 <div class="listingblock">
 <div class="title">Dropdown.js</div>
 <div class="content">
@@ -1178,9 +1110,8 @@ export default function Dropdown (props) {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="menuitem.js">MenuItem.js</h2>
+<h2 id="_menuitem_js">MenuItem.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Used by <code>TopNav</code> and <code>SideNav</code> to create and display menu items.</p>
@@ -1201,8 +1132,6 @@ will fill in as it’s read.</p>
 <p>The <code>size</code> prop determines the width of the modal unless overridden when
 a small screen width is detected.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_5">Source</h3>
 <div class="listingblock">
 <div class="title">MenuItem.js</div>
 <div class="content">
@@ -1223,19 +1152,19 @@ import FetchHtmlText from './FetchHtmlText.js'
  */
 export default function MenuItem (props) {
   let label = props.children,
-    size = props.size,
-    title = txt[label],
-    html = &lt;FetchHtmlText&gt;{label}&lt;/FetchHtmlText&gt;,
-    clickme = () =&gt; {
-      if (window.screen.width &gt; 760) {
-        modalWidth(size)
-      } else {
-        modalWidth('98%')
+      size = props.size,
+      title = txt[label],
+      html = &lt;FetchHtmlText&gt;{label}&lt;/FetchHtmlText&gt;,
+      clickme = () =&gt; {
+        if (window.screen.width &gt; 760) {
+          modalWidth(size)
+        } else {
+          modalWidth('98%')
+        }
+        modalTitle(title[langIndex()])
+        modalMsg(html)
+        displayModal('block')
       }
-      modalTitle(title[langIndex()])
-      modalMsg(html)
-      displayModal('block')
-    }
   return (
     &lt;div className='menuitem' onClick={clickme}&gt;
       {title[langIndex()]}
@@ -1246,9 +1175,8 @@ export default function MenuItem (props) {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="modalbase.js">ModalBase.js</h2>
+<h2 id="_modalbase_js">ModalBase.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This serves as an anchor or placeholder for displaying <code>Modal</code>. It hides
@@ -1265,8 +1193,6 @@ not needed.</p>
 <code>S.data()</code> streams so they will be updated automatically with their
 state changes.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_6">Source</h3>
 <div class="listingblock">
 <div class="title">ModalBase.js</div>
 <div class="content">
@@ -1290,9 +1216,8 @@ export default function ModalBase () {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="modal.js">Modal.js</h2>
+<h2 id="_modal_js">Modal.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>There are several <code>S.data()</code> streams and CSS classes used by this
@@ -1313,8 +1238,6 @@ title for this modal.</p>
 <div class="paragraph">
 <p>There is a placeholder for a footer which is currently unused.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_7">Source</h3>
 <div class="listingblock">
 <div class="title">Modal.js</div>
 <div class="content">
@@ -1348,9 +1271,8 @@ export default () =&gt; {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="sidenav.js">SideNav.js</h2>
+<h2 id="_sidenav_js">SideNav.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The SideNav menu opens with the <code>TopNav</code> hamburger menu, and closes with
@@ -1367,22 +1289,6 @@ outer node to be manipulated, such as the <code>displayState()</code>.</p>
 The child text node is used to select both the key in the <code>labeledText</code>
 object and filename to be read into the modal.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The child text node for the <code>close</code> element uses
-<code>String.fromCharCode(215)</code> to display <code>&amp;times;</code> because Surplus seems
-to escape the html code rather than display the <code>X</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_source_8">Source</h3>
 <div class="listingblock">
 <div class="title">SideNav.js</div>
 <div class="content">
@@ -1395,28 +1301,32 @@ const close = () =&gt; {
   displayState('none')
 }
 export default function SideNav () {
+  let divStyle = {
+    fontSize: '2em',
+    padding: '0 0 0 0.3em'
+  }
   let myside = &lt;div className='sidenav'&gt;
-    &lt;div /&gt;
+  &lt;div /&gt;
 
-    &lt;MenuItem size='840px' &gt;calendar&lt;/MenuItem&gt;
-    &lt;MenuItem size='370px' &gt;readings&lt;/MenuItem&gt;
-    &lt;MenuItem size='60%' &gt;pastors&lt;/MenuItem&gt;
-    &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
-    &lt;MenuItem size='30%' &gt;confession&lt;/MenuItem&gt;
-    &lt;MenuItem size='30%' &gt;adoration&lt;/MenuItem&gt;
-    &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
-    &lt;MenuItem size='60%' &gt;sick&lt;/MenuItem&gt;
-    &lt;MenuItem size='60%' &gt;troops&lt;/MenuItem&gt;
-    &lt;MenuItem size='40%' &gt;vocations&lt;/MenuItem&gt;
-    &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
-    &lt;MenuItem size='40%' &gt;gift&lt;/MenuItem&gt;
-    &lt;MenuItem size='60%' &gt;family&lt;/MenuItem&gt;
-    &lt;MenuItem size='60%' &gt;prayrosary&lt;/MenuItem&gt;
-    &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
-    &lt;MenuItem size='40%' &gt;knights&lt;/MenuItem&gt;
-    &lt;MenuItem size='40%' &gt;maidens&lt;/MenuItem&gt;
-    &lt;MenuItem size='40%' &gt;firstfriday&lt;/MenuItem&gt;
-    &lt;div onClick={close} style='font-size: 2em; padding: 0 0 0 0.3em;'&gt;{String.fromCharCode(215)}&lt;/div&gt;
+  &lt;MenuItem size='840px' &gt;calendar&lt;/MenuItem&gt;
+  &lt;MenuItem size='370px' &gt;readings&lt;/MenuItem&gt;
+  &lt;MenuItem size='60%' &gt;pastors&lt;/MenuItem&gt;
+  &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
+  &lt;MenuItem size='30%' &gt;confession&lt;/MenuItem&gt;
+  &lt;MenuItem size='30%' &gt;adoration&lt;/MenuItem&gt;
+  &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
+  &lt;MenuItem size='60%' &gt;sick&lt;/MenuItem&gt;
+  &lt;MenuItem size='60%' &gt;troops&lt;/MenuItem&gt;
+  &lt;MenuItem size='40%' &gt;vocations&lt;/MenuItem&gt;
+  &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
+  &lt;MenuItem size='40%' &gt;gift&lt;/MenuItem&gt;
+  &lt;MenuItem size='60%' &gt;family&lt;/MenuItem&gt;
+  &lt;MenuItem size='60%' &gt;prayrosary&lt;/MenuItem&gt;
+  &lt;div&gt;&lt;hr /&gt;&lt;/div&gt;
+  &lt;MenuItem size='40%' &gt;knights&lt;/MenuItem&gt;
+  &lt;MenuItem size='40%' &gt;maidens&lt;/MenuItem&gt;
+  &lt;MenuItem size='40%' &gt;firstfriday&lt;/MenuItem&gt;
+  &lt;div onClick={close} style={divStyle}&gt;&amp;times;&lt;/div&gt;
   &lt;/div&gt;
   myside.style.display = displayState()
   return (
@@ -1427,16 +1337,13 @@ export default function SideNav () {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="header.js">Header.js</h2>
+<h2 id="_header_js">Header.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Displays a header with a title and subtitle taken from <code>textStrings.js</code>.
 These change content when the <code>langIndex()</code> S data stream changes.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_9">Source</h3>
 <div class="listingblock">
 <div class="title">Header.js</div>
 <div class="content">
@@ -1457,9 +1364,8 @@ export default function Header () {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="intro.js">Intro.js</h2>
+<h2 id="_intro_js">Intro.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>Intro</code> component displays an introduction message taken from the
@@ -1470,8 +1376,6 @@ export default function Header () {
 another language is selected, but it does because <code>FetchHtmlText</code>
 notices the <code>langIndex()</code> change.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_10">Source</h3>
 <div class="listingblock">
 <div class="title">Intro.js</div>
 <div class="content">
@@ -1490,9 +1394,8 @@ export default function Intro () {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="fetchhtmltext.js">FetchHtmlText.js</h2>
+<h2 id="_fetchhtmltext_js">FetchHtmlText.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Uses ES6 <code>fetch</code> to read text from a URI asynchronously. In this case
@@ -1538,8 +1441,6 @@ etc. works fine.
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="_source_11">Source</h3>
 <div class="listingblock">
 <div class="title">FetchHtmlText.js</div>
 <div class="content">
@@ -1550,7 +1451,7 @@ import {langIndex} from './langIndex.js'
 export default function FetchHtmlText (props) {
   const lang = ['EN', 'ES'] // Directory names.
   let node = &lt;div className='loadText' /&gt;
-  fetch(`./${lang[langIndex()]}/${props.children[0]}.html`,
+  fetch(`./${lang[langIndex()]}/${props.children}.html`,
         {cache: 'no-cache, no-store, must-revalidate'})
     .then(resp =&gt; resp.text())
     .then(text =&gt; node.innerHTML = text)
@@ -1560,16 +1461,15 @@ export default function FetchHtmlText (props) {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="pictures.js">Pictures.js</h2>
+<h2 id="_pictures_js">Pictures.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a slideshow of pictures, with some interesting features. It’s
 the largest component in the app.</p>
 </div>
 <div class="sect2">
-<h3 id="the-image-files">The image files</h3>
+<h3 id="_the_image_files">The image files</h3>
 <div class="paragraph">
 <p>The imported <code>filelist.js</code> has an array of image filenames like:</p>
 </div>
@@ -1591,7 +1491,7 @@ directory to construct the list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="displaying-an-image-the-easy-way">Displaying an image the easy way</h3>
+<h3 id="_displaying_an_image_the_easy_way">Displaying an image the easy way</h3>
 <div class="paragraph">
 <p>Displaying a <code>jpg</code> photo image is as simple as creating an <code>img</code> node
 and assigning a resource to its <code>src</code>, like so:</p>
@@ -1613,7 +1513,7 @@ Preloading images in the background before they’re displayed is better.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="prefetching-images">Prefetching images</h3>
+<h3 id="_prefetching_images">Prefetching images</h3>
 <div class="paragraph">
 <p>Prefetching all images would be too much to handle, so I only use three.
 <code>current</code>, <code>previous</code> and <code>next</code> are Surplus nodes that will contain the
@@ -1691,7 +1591,7 @@ image on startup.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="swipe">Swipe</h3>
+<h3 id="_swipe_event_handler">Swipe event handler</h3>
 <div class="paragraph">
 <p>For devices that support touch events, swiping to select previous and
 next images is convenient. Attaching the right event handlers to invoke
@@ -1719,9 +1619,7 @@ this, but they also add lots of extra code for features I don’t need.
 <td class="content">
 Chrome’s debugger let me examine events for clues about how to use
 them. Chrome on my Linux laptop doesn’t support touch events, but their
-debugger simulates them if a smartphone emulator is selected. (I don’t
-know how to bring up the debugger on a smartphone, if it’s even
-possible.)
+debugger simulates them if a smartphone emulator is selected.
 </td>
 </tr>
 </table>
@@ -1741,7 +1639,7 @@ value picked by experimentation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="attaching-the-touch-event-handler">Attaching the touch event handler</h3>
+<h3 id="_attaching_the_touch_event_handler">Attaching the touch event handler</h3>
 <div class="paragraph">
 <p>When working with JSX it’s easy to fall for the illusion that you’re
 working with HTML, when in fact it’s all JavaScript. Some event handlers
@@ -1857,9 +1755,6 @@ event handlers.</td>
 </tr>
 </table>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_source_12">Source</h3>
 <div class="listingblock">
 <div class="title">Pictures.js</div>
 <div class="content">
@@ -1953,7 +1848,7 @@ export default function Pictures () {
 </div>
 </div>
 <div class="sect1">
-<h2 id="news.js">News.js</h2>
+<h2 id="_news_js">News.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Displays a list of newsworthy items as clickable text. All of the real
@@ -1966,8 +1861,6 @@ work is done by <code>Listings</code>.</p>
 <p>The news items come from <code>newsStrings.js</code>, which is manually edited for
 updated content along with matching text content files.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_13">Source</h3>
 <div class="listingblock">
 <div class="title">News.js</div>
 <div class="content">
@@ -1991,9 +1884,8 @@ export default function News () {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="events.js">Events.js</h2>
+<h2 id="_events_js">Events.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Displays a list of event items as clickable text. All of the real work
@@ -2018,8 +1910,6 @@ These are social Events like dinners, not DOM events or the like.
 <p>The event items come from <code>eventsStrings.js</code>, which is manually edited
 for updated content along with matching text content files.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_14">Source</h3>
 <div class="listingblock">
 <div class="title">Events.js</div>
 <div class="content">
@@ -2044,9 +1934,8 @@ export default function Events () {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="listings.js">Listings.js</h2>
+<h2 id="_listings_js">Listings.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Displays a list of News or Events. Since they share the same format, I
@@ -2087,8 +1976,6 @@ as dates and notes. A numeric <code>2</code> is added to the language index to
 select the right message. An even number index is for one language, and
 odd for another. This could be extended for more text easily.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_15">Source</h3>
 <div class="listingblock">
 <div class="title">Listings.js</div>
 <div class="content">
@@ -2138,9 +2025,8 @@ export default function Listings (props) {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="footer.js">Footer.js</h2>
+<h2 id="_footer_js">Footer.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Returns a <code>div</code> containing text labels and brief content.</p>
@@ -2152,8 +2038,6 @@ export default function Listings (props) {
 <p>The first <code>footertitle</code> entry doesn’t change when languages are
 switched, because it doesn’t vary. The rest of the text changes.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_16">Source</h3>
 <div class="listingblock">
 <div class="title">Footer.js</div>
 <div class="content">
@@ -2189,9 +2073,8 @@ export default function Footer (props) {
 </div>
 </div>
 </div>
-</div>
 <div class="sect1">
-<h2 id="getlabeledtext.js">GetLabeledText.js</h2>
+<h2 id="_getlabeledtext_js">GetLabeledText.js</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Used only by the <code>Footer</code> component, it reads the file <code>labeledText.js</code>.
@@ -2203,8 +2086,6 @@ the content is different.</p>
 labels and static text strings, and should rarely change. The second
 string <code>msg</code> can contain HTML tags and styles.</p>
 </div>
-<div class="sect2">
-<h3 id="_source_17">Source</h3>
 <div class="listingblock">
 <div class="title">GetLabeledText.js</div>
 <div class="content">
@@ -2229,10 +2110,9 @@ export default function GetLabeledText (props) {
 </div>
 </div>
 </div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-01-12 12:27:24 CST
+Last updated 2018-04-14 17:05:32 CDT
 </div>
 </div>
 <script src="prism/prism.js"></script>
