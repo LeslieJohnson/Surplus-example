@@ -5,7 +5,7 @@ import {labeledText as lt} from './labeledText.js'
 
 export default function GetLabeledText (props) {
   let textNode = <div className='msg' />
-  let label = props.children
+  let label = props.children[0]
   textNode.innerHTML = lt[label][langIndex() + 2]
   return (
     <div className='labeledtext'>
