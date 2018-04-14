@@ -14,7 +14,7 @@ import FetchHtmlText from './FetchHtmlText.js'
    when the menu item is clicked.
  */
 export default function MenuItem (props) {
-  let label = props.children[0],
+  let label = props.children,
       size = props.size,
       title = txt[label],
       html = <FetchHtmlText>{label}</FetchHtmlText>,
