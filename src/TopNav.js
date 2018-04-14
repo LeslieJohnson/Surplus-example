@@ -17,10 +17,10 @@ const toggleSide = () => {
   displayState() === 'block' ? displayState('none') : displayState('block')
 }
 /** TopNav is fixed at the top of the page, so it acts an an anchor to
-   Components that don't scroll with the rest of the page content. So
-   it has a dual purpose, the other being to provide dropdown menus,
-   as provided by its child component Dropdown with parameters and children.
- */
+   Components that don't scroll with the rest of the page content.  It
+   has a dual purpose, one being a navbar displayed at the top of the
+   page, and the other anchoring dropdown menus, as provided by
+   its child component Dropdown with parameters and children.  */
 export default function TopNav () {
   return (<nav className='topNav'>
     {/* Horizontal menu, starting with the hamburger 'button'. */}
