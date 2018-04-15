@@ -22,7 +22,8 @@ const toggleSide = () => {
    page, and the other anchoring dropdown menus, as provided by
    its child component Dropdown with parameters and children.  */
 export default function TopNav () {
-  return (<nav className='topNav'>
+  return (
+    <nav className='topNav'>
     {/* Horizontal menu, starting with the hamburger 'button'. */}
     <ul>
       <span className='menu' onClick={toggleSide}>
