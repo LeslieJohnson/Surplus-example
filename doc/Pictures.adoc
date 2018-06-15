@@ -3,13 +3,11 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[pictures.js]]
 == Pictures.js
 
 This is a slideshow of pictures, with some interesting features. It’s
 the largest component in the app.
 
-[[the-image-files]]
 === The image files
 
 The imported `filelist.js` has an array of image filenames like:
@@ -29,7 +27,6 @@ As image files are added, the filelist object must be edited manually,
 because JavaScript browser clients can’t read the server’s filesystem
 directory to construct the list.
 
-[[displaying-an-image-the-easy-way]]
 === Displaying an image the easy way
 
 Displaying a `jpg` photo image is as simple as creating an `img` node
@@ -48,7 +45,6 @@ The problem with this approach is that loading new images, which can be
 large, takes too much time for a mobile device on a slow network.
 Preloading images in the background before they’re displayed is better.
 
-[[prefetching-images]]
 === Prefetching images
 
 Prefetching all images would be too much to handle, so I only use three.
@@ -106,8 +102,7 @@ three image nodes. The `current` image is loaded first, followed by the
 other two so that the user only has to wait for the first to see an
 image on startup.
 
-[[swipe]]
-=== Swipe
+=== Swipe event handler
 
 For devices that support touch events, swiping to select previous and
 next images is convenient. Attaching the right event handlers to invoke
@@ -118,9 +113,7 @@ this, but they also add lots of extra code for features I don’t need.
 
 TIP: Chrome’s debugger let me examine events for clues about how to use
 them. Chrome on my Linux laptop doesn’t support touch events, but their
-debugger simulates them if a smartphone emulator is selected. (I don’t
-know how to bring up the debugger on a smartphone, if it’s even
-possible.)
+debugger simulates them if a smartphone emulator is selected.
 
 I use `swipeStart()` and `swipeEnd()` to capture the coordinates for the
 user action. A little `diff` helper tells me how far across the screen
@@ -133,7 +126,6 @@ which can lead to annoying picture changes while swiping up or down. To
 avoid this I ignore X coordinate changes smaller than an arbitrary pixel
 value picked by experimentation.
 
-[[attaching-the-touch-event-handler]]
 === Attaching the touch event handler
 
 When working with JSX it’s easy to fall for the illusion that you’re
@@ -221,7 +213,6 @@ touch events.
 <5> The `container` is just like the old JSX return node, but with added
 event handlers.
 
-=== Source
 
 .Pictures.js
 [source,jsx,numbered]

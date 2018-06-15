@@ -11,6 +11,3 @@ a `size` property which used by the modal that is invoked when
 selected. The child text node is used to select both the key in the
 `labeledText` object and filename to be read into the modal.
 
-NOTE: The child text node for the `close` element uses
-`String.fromCharCode(215)` to display `\&times;` because Surplus seems
-to escape the html code rather than display the `X`.

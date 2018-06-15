@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[news.js]]
 == News.js
 
 Displays a list of newsworthy items as clickable text. All of the real
@@ -14,7 +13,6 @@ Identical to `Events.js` except for some string content.
 The news items come from `newsStrings.js`, which is manually edited for
 updated content along with matching text content files.
 
-=== Source
 
 .News.js
 [source,jsx,numbered]

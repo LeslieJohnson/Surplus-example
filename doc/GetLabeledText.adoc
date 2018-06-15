@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[getlabeledtext.js]]
 == GetLabeledText.js
 
 Used only by the `Footer` component, it reads the file `labeledText.js`.
@@ -14,7 +13,6 @@ Unlike the other two files, this content is only used for displaying
 labels and static text strings, and should rarely change. The second
 string `msg` can contain HTML tags and styles.
 
-=== Source
 
 .GetLabeledText.js
 [source,jsx,numbered]

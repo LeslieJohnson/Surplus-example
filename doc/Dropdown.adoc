@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[dropdown.js]]
 == Dropdown.js
 
 `TopNav` uses this for creating a list of dropdown menus in its menubar.
@@ -22,7 +21,6 @@ A clicked menu item displays a `Modal`, and Modal width is passed as
 `props.size`. This width will be overridden for small screens like
 mobile devices.
 
-=== Source
 
 .Dropdown.js
 [source,jsx,numbered]

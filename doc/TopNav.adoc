@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[topnav.js]]
 == TopNav.js
 
 This is a relatively simple Top Navigation bar, or rather a misnamed
@@ -43,7 +42,6 @@ Another important toggle is the `li` element that controls
 exports the S data function `langIndex()`. A click on this element
 changes all displayed text to another language.
 
-=== Source
 
 .TopNav.js
 [source,jsx,numbered]
@@ -66,18 +64,20 @@ window.addEventListener('scroll', () => {
 const toggleSide = () => {
   displayState() === 'block' ? displayState('none') : displayState('block')
 }
-/** TopNav is fixed at the top of the page, so it acts an an anchor to
-   Components that don't scroll with the rest of the page content. So
-   it has a dual purpose, the other being to provide dropdown menus,
-   as provided by its child component Dropdown with parameters and children.
+/** 
+   TopNav is fixed at the top of the page, so it acts an an anchor to
+   Components that don't scroll with the rest of the page content.  It
+   has a dual purpose, one being a navbar displayed at the top of the
+   page, and the other anchoring dropdown menus, as provided by
+   its child component Dropdown with parameters and children.  
  */
 export default function TopNav () {
-  return (<nav className='topNav'>
+  return (
+    <nav className='topNav'>
     {/* Horizontal menu, starting with the hamburger 'button'. */}
     <ul>
       <span className='menu' onClick={toggleSide}>
-        <li className='burger dropbtn' >☰</li>
-        <li>{txt.menu[langIndex()]}<Dropdown /></li>
+        <li className='burger dropbtn' >☰&nbsp;</li>
       </span>
       <li>
         {/* Dropdown children invoke modals on selection. */}

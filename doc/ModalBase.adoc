@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[modalbase.js]]
 == ModalBase.js
 
 This serves as an anchor or placeholder for displaying `Modal`. It hides
@@ -18,7 +17,6 @@ The `node.style.width` and `node.style.display` properties are set to
 `S.data()` streams so they will be updated automatically with their
 state changes.
 
-=== Source
 
 .ModalBase.js
 [source,jsx,numbered]

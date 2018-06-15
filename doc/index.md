@@ -1,6 +1,8 @@
 
 # Responsive Web App with Surplus
-React is good. Surplus is better, faster and easier to use.
+By [Leslie Johnson](http://les-johnson.com)
+
+Surplus offers a faster, simpler approach to Reactive web app development than React.
 
 ## Intro
 
@@ -12,7 +14,8 @@ anywhere. It's all built from scratch.
 This small app is not just a demo, but a working SPA with complete
 documentation and source code. It has asynchronous resource loading,
 image prefetch and cache, touch event handling and dynamic bilingual language
-selection for all menus and text across the app.
+selection for all menus and text across the app. This document is best read
+while looking at the [live app.](http://stleocenterville.org)
 
 My goal was to make a simple, fast and mobile-friendly reactive app
 without any server code. The result is 403 lines of source code,
@@ -155,7 +158,7 @@ document.
 ## Development environment
 
 I use standard command line and scripted JavaScript developer tools,
-like git, npm, webpack with babel, bash and others. The
+like `git`, `npm`, `webpack` with `babel`, `bash` and others. The
 `package.json` and `webpack.config.js` should look familiar to any
 modern developer.
 

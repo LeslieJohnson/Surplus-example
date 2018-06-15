@@ -87,7 +87,7 @@ three image nodes. The `current` image is loaded first, followed by
 the other two so that the user only has to wait for the first to see
 an image on startup.
 
-### Swipe
+### Swipe event handler
 For devices that support touch events, swiping to select previous and
 next images is convenient. Attaching the right event handlers to
 invoke `prevPic()` and `nextPic()` does the trick.

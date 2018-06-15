@@ -8,7 +8,7 @@ IMPORTANT: Compare this to `React` Component's `setState()`. With React,
 each component has its own state, and its child components only update
 theirs if `forceUpdate` is passed to `setState`. Here, any component
 can use `langIndex` simply by importing it. `S` takes care of the data
-binding.
+binding. [Update: I see React's `context` is now un-deprecated.]
 
 The `toggleLang` function does what it says. It's invoked from the
 `TopNav` menubar at the rightmost position.

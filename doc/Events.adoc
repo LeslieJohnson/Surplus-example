@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[events.js]]
 == Events.js
 
 Displays a list of event items as clickable text. All of the real work
@@ -16,7 +15,6 @@ Identical to `News.js` except for string content.
 The event items come from `eventsStrings.js`, which is manually edited
 for updated content along with matching text content files.
 
-=== Source
 
 .Events.js
 [source,jsx,numbered]

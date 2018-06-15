@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[menuitem.js]]
 == MenuItem.js
 
 Used by `TopNav` and `SideNav` to create and display menu items.
@@ -21,7 +20,6 @@ will fill in as it’s read.
 The `size` prop determines the width of the modal unless overridden when
 a small screen width is detected.
 
-=== Source
 
 .MenuItem.js
 [source,jsx,numbered]
@@ -43,19 +41,19 @@ import FetchHtmlText from './FetchHtmlText.js'
  */
 export default function MenuItem (props) {
   let label = props.children,
-    size = props.size,
-    title = txt[label],
-    html = <FetchHtmlText>{label}</FetchHtmlText>,
-    clickme = () => {
-      if (window.screen.width > 760) {
-        modalWidth(size)
-      } else {
-        modalWidth('98%')
+      size = props.size,
+      title = txt[label],
+      html = <FetchHtmlText>{label}</FetchHtmlText>,
+      clickme = () => {
+        if (window.screen.width > 760) {
+          modalWidth(size)
+        } else {
+          modalWidth('98%')
+        }
+        modalTitle(title[langIndex()])
+        modalMsg(html)
+        displayModal('block')
       }
-      modalTitle(title[langIndex()])
-      modalMsg(html)
-      displayModal('block')
-    }
   return (
     <div className='menuitem' onClick={clickme}>
       {title[langIndex()]}

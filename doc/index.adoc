@@ -3,12 +3,13 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[responsive-web-app-with-surplus]]
 = Responsive Web App with Surplus
 
-React is good. Surplus is better, faster and easier to use.
+By http://les-johnson.com[Leslie Johnson]
 
-[[intro]]
+Surplus offers a faster, simpler approach to Reactive web app
+development than React.
+
 == Intro
 
 This is a JavaScript webapp using Surplus and S as a development
@@ -19,7 +20,8 @@ all built from scratch.
 This small app is not just a demo, but a working SPA with complete
 documentation and source code. It has asynchronous resource loading,
 image prefetch and cache, touch event handling and dynamic bilingual
-language selection for all menus and text across the app.
+language selection for all menus and text across the app. This document
+is best read while looking at the http://stleocenterville.org[live app.]
 
 My goal was to make a simple, fast and mobile-friendly reactive app
 without any server code. The result is 403 lines of source code,
@@ -31,7 +33,6 @@ tracking and updating data bindings in the DOM, and `Surplus` as a
 component framework. Take a look at https://github.com/adamhaile/S[S]
 and https://github.com/adamhaile/surplus[Surplus] on Github.
 
-[[s-and-surplus]]
 == S and Surplus
 
 https://github.com/adamhaile/S[S] and
@@ -46,7 +47,6 @@ Github page.
 To me, it looks like a less complex React with better functionality and
 can be a first-rate development framework.
 
-[[s.js]]
 === S.js
 
 The idea behind S is wonderfully simple. There is no virtual DOM, but
@@ -66,7 +66,6 @@ magic between what the debugger sees and the DOM. There are no synthetic
 events or component lifecycle changes. All components can be purely
 functional.
 
-[[surplus]]
 === Surplus
 
 `Surplus` uses JSX to create Components that use `S`, and has
@@ -77,7 +76,6 @@ is small and it consistently runs the fastest
 https://github.com/krausest/js-framework-benchmark[benchmarks] of any
 platform.
 
-[[hello-world---hola-mundo]]
 == Hello World -> Hola Mundo
 
 There are nine `S.data()` functions in the app, used for modal and
@@ -136,7 +134,6 @@ properties etc. work with Surplus components seamlessly.
 Surplus components look like the pure functional components in React and
 Inferno. JSX is a standard separate from React which Surplus follows.
 
-[[what-is-this-app]]
 == What is this App?
 
 It’s a website for my local Catholic church. The users like up-to-date
@@ -165,12 +162,12 @@ building this document from Markdown files in the `doc` directory.
 effort went into this, but details are outside of the scope of this
 document.
 
-[[development-environment]]
 == Development environment
 
 I use standard command line and scripted JavaScript developer tools,
-like git, npm, webpack with babel, bash and others. The `package.json`
-and `webpack.config.js` should look familiar to any modern developer.
+like `git`, `npm`, `webpack` with `babel`, `bash` and others. The
+`package.json` and `webpack.config.js` should look familiar to any
+modern developer.
 
 Emacs is my IDE. Emacs does everything an IDE does if it’s setup right.
 
@@ -191,10 +188,8 @@ NOTE: I’m not a Windows developer, and development using node command
 line tools on Windows is not my specialty. Google and StackOverflow
 should help if you prefer Windows for development.
 
-[[source-code]]
 = Source Code
 
-[[index.html]]
 == index.html
 
 The root node is appended to the document body in a minimal
@@ -207,7 +202,6 @@ the app, compressed.
 include::../public/index.html[]
 ----
 
-[[modules]]
 = Modules
 
 include::App.adoc[]

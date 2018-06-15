@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[modal.js]]
 == Modal.js
 
 There are several `S.data()` streams and CSS classes used by this
@@ -20,7 +19,6 @@ title for this modal.
 
 There is a placeholder for a footer which is currently unused.
 
-=== Source
 
 .Modal.js
 [source,jsx,numbered]

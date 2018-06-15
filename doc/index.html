@@ -1006,13 +1006,16 @@ window.addEventListener('scroll', () =&gt; {
 const toggleSide = () =&gt; {
   displayState() === 'block' ? displayState('none') : displayState('block')
 }
-/** TopNav is fixed at the top of the page, so it acts an an anchor to
+/**
+   TopNav is fixed at the top of the page, so it acts an an anchor to
    Components that don't scroll with the rest of the page content.  It
    has a dual purpose, one being a navbar displayed at the top of the
    page, and the other anchoring dropdown menus, as provided by
-   its child component Dropdown with parameters and children.  */
+   its child component Dropdown with parameters and children.
+ */
 export default function TopNav () {
-  return (&lt;nav className='topNav'&gt;
+  return (
+    &lt;nav className='topNav'&gt;
     {/* Horizontal menu, starting with the hamburger 'button'. */}
     &lt;ul&gt;
       &lt;span className='menu' onClick={toggleSide}&gt;
@@ -2112,7 +2115,7 @@ export default function GetLabeledText (props) {
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-04-14 17:05:32 CDT
+Last updated 2018-04-15 14:29:35 CDT
 </div>
 </div>
 <script src="prism/prism.js"></script>

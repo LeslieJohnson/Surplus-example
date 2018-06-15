@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[listings.js]]
 == Listings.js
 
 Displays a list of News or Events. Since they share the same format, I
@@ -38,7 +37,6 @@ as dates and notes. A numeric `2` is added to the language index to
 select the right message. An even number index is for one language, and
 odd for another. This could be extended for more text easily.
 
-=== Source
 
 .Listings.js
 [source,jsx,numbered]

@@ -3,7 +3,6 @@
 :icons: font
 :docinfo1:
 :toc: left
-[[app.js]]
 == App.js
 
 App is the entry point and does little else other than import component
@@ -11,7 +10,6 @@ modules, and create an `S` root node. The components and their ordering
 create the main display page, which in this Single Page Application is
 the whole app (most of which is hidden at this point).
 
-[[modules-and-components]]
 === Modules and Components
 
 Though the app is made of purely modular components, most were isolated
@@ -27,7 +25,6 @@ components, out of 15 in all.
 All components in my app are ES6 modules, in addition to modules that
 are not components, such as objects with text arrays.
 
-=== Source
 
 .App.js
 [source,jsx,numbered]
