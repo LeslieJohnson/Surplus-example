@@ -33,7 +33,7 @@ let prevPic = () => {
 }
 
 let fetchPic = (name, node) => { // Pic filename, and node to load into.
-  return (fetch(name, {cache: 'public, max-age=0'}) // Cache if possible.
+  return (fetch(name) // Cache if possible.
     .then((res) => { return res.blob() })
     .then((myBlob) => {
       let url = URL.createObjectURL(myBlob)
