@@ -9,12 +9,14 @@ body {
 }
 @font-face {
   font-family: 'Garamond';
+  font-display: 'fallback';
   src: url('fonts/ebgaramond12-regular-webfont.woff2'),
   url('fonts/ebgaramond12-regular-webfont.woff'),
   url('fonts/ebgaramond12-regular-webfont.ttf')
 }
 @font-face {
   font-family: 'Raleway-light';
+  font-display: 'fallback';
   src: url('fonts/raleway-light-webfont.woff2'),
   url('fonts/raleway-light-webfont.woff'),
   url('fonts/raleway-light-webfont.ttf')
