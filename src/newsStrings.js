@@ -1,7 +1,11 @@
 export const newsStrings = {
-  signup: ['signup for emails', 'registrarse para correos electrónicos', 'sheet in back of church', 'parte posterior de la iglesia'],
-  blessings: ['Blessing of Sacramentals', 'bendición de los sacramentales', 'Jan 5-6', '5-6 de Enero'],
-  epiphany: ['Epiphany Mass', 'masa de epifanía', 'January 6, 10AM', '6 de Enero 10AM'],
-  bakesale: ['Bake Sale for Maidens', 'venta de pasteles para doncellas', 'December 24', 'Diciembre 24'],
-  maidens: ['Maidens of the Altar Ceremony', 'Las Doncellas del Altar', 'December 8', 'Diciembre 8']
+  // foo:  ['','','',''],
+  pastors:  ['Pastor\'s page','Página del Pastor','November 25','25 de Noviembre'],
+  thanksgiving: ['thanksgiving','acción de gracias','',''],
+  bishop: ['bishop strickland\'s public statement','declaración pública de obispo strickland','August 26','26 de Agosto'],
+  collection: ['Collection totals','totales de la colección','Sunday November 18','Domingo 18 de Noviembre'],
+  gift: ['Expense report','informe de gastos','January-September 2018','Enero-Septiembre 2018'],
+  thanks: ['thanks for st. leo\'s celebration success','gracias por st. éxito de celebración de leo','',''],
+  //catechists: ['we need more catechists!','NECESITAMOS MÁS CATEQUISTAS!','',''],
+  //raiser: ['Debt reduction fundraiser','LA REDUCCIÓN DE LA DEUDA RAISER','May 12 evening','12 de mayo por la tarde'],
 }

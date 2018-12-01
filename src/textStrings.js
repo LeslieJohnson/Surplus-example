@@ -1,45 +1,45 @@
 export const textStrings = {
   title: ['St. Leo the Great',
-    'San León Magno'
+          'San León Magno'
   ],
   subtitle: ['Roman Catholic Church • Centerville, TX',
-    'Iglesia Católica Romana • Centerville, TX'
+             'Iglesia Católica Romana • Centerville, TX'
   ],
   language: ['Español', // Order is backwards for language toggle button.
-    'English'
+             'English'
   ],
   toggle: ['para Español',
-    'Change language to English'
+           'Change language to English'
   ],
   map: ['Map',
-    'Mapa'
+        'Mapa'
   ],
   schedule: ['Schedule',
-    'Horario'
+             'Horario'
   ],
   aboutUs: ['About Us',
-    'Acerca de Nosotros'
+            'Acerca de Nosotros'
   ],
   contact: ['Contact Us',
-    'Contáctenos'
+            'Contáctenos'
   ],
   donate: ['Donate',
-    'Donar'
+           'Donar'
   ],
   fund: ['St Leo General Fund',
-    'San León fondo General'
+         'San León fondo General'
   ],
   buildingFund: ['Building Fund',
-    'Fondo de Construcción'
+                 'Fondo de Construcción'
   ],
   bishop: ['Bishop\'s Annual Appeal',
-    'Fondo de Obispos'
+           'Fondo de Obispos'
   ],
   search: ['Search',
-    'Búsqueda'
+           'Búsqueda'
   ],
   menu: ['menu',
-    'menú'
+         'menú'
   ],
   parish: ['A parish of the Catholic Diocese of Tyler, Texas', 'Una parroquia de la Diócesis Católica de Tyler, Texas'],
 
@@ -47,103 +47,103 @@ export const textStrings = {
      Strings with associated html files start below.
    */
   address: ['Address',
-    'Dirección'
+            'Dirección'
   ],
   directions: ['Directions', // text: 'EN/directions.html'
-    'Ubicación'   // text: 'ES/directions.html'
+               'Ubicación'   // text: 'ES/directions.html'
   ],
   masstimes: ['Mass Times',
-    'Tiempos de Misa'
+              'Tiempos de Misa'
   ],
   sundaymass: ['Sunday Mass',
-    'Misa Domingo'
+               'Misa Domingo'
   ],
   weekdaymass: ['Weekday Mass',
-    'Misas Daria'
+                'Misas Daria'
   ],
   adoration: ['Adoration',
-    'Adoración'
+              'Adoración'
   ],
   confession: ['Confession',
-    'Confesión'
+               'Confesión'
   ],
   firstfriday: ['First Friday/Saturday Devotions',
-    'Primer viernes / sábado Devociones'],
+                'Primer viernes / sábado Devociones'],
   firstsaturday: ['First Saturday', ''],
   knights: ['Knights of the Altar', 'Caballeros del Altar'],
   maidens: ['Maidens of the Altar', 'Doncellas del Altar'],
   rosary: ['Rosary',
-    'Rosario'
+           'Rosario'
   ],
   family: ['Family Faith Formation',
-    'Formación Familiar en la fe'
+           'Formación Familiar en la fe'
   ],
   about: ['Our Parish',
-    'Nuestra Parroquia'
+          'Nuestra Parroquia'
   ],
   aboutLeo: ['Our Patron Saint Leo the Great',
-    'San León Magno'
+             'San León Magno'
   ],
   office: ['St Leo parish office',
-    'Oficina Parroquial'
+           'Oficina Parroquial'
   ],
-  pastor: ['Fr. Kevin Young',
-    'Fr. Kevin Young'
+  pastor: ['Fr. Joseph Lourdusamy',
+           'Fr. Joseph Lourdusamy'
   ],
   secretary: ['Secretary Anita Muños',
-    'Secretaria Anita Muños'
+              'Secretaria Anita Muños'
   ],
   tyler: [' Diocese of Tyler ',
-    ' Diócesis de Tyler '
+          ' Diócesis de Tyler '
   ],
   troops: ['Pray for our Troops',
-    'Orar por Nuestras Tropas'
+           'Orar por Nuestras Tropas'
   ],
   sick: ['Pray for our Sick',
-    'Oremos por Nuestros Enfermos'
+         'Oremos por Nuestros Enfermos'
   ],
   links: ['Links',
-    'Links'
+          'Links'
   ],
   sale: ['Bibles, Catechisms and Prayer Books for Sale',
-    'Biblias, Catecismos y Libros de Oración Para la Venta'
+         'Biblias, Catecismos y Libros de Oración Para la Venta'
   ],
   charities: ['Catholic Charities',
-    'Caridades Católicas'
+              'Caridades Católicas'
   ],
   prayrosary: ['Pray the Holy Rosary with us each Sunday!',
-    '¡Rezar el Santo Rosario con nosotros cada domingo!'
+               '¡Rezar el Santo Rosario con nosotros cada domingo!'
   ],
   news: ['News',
-    'Noticias'
+         'Noticias'
   ],
   events: ['Upcoming Events', 'Próximos Eventos'
   ],
-  gift: ['Your Gift to God (Collections)',
-    'Su Ofrenda a Dios'
+  gift: ['Expense Report',
+         'Informe de Gastos'
   ],
   citizens: ['We Are Catholic Citizens',
-    'Somos Ciudadanos Católicos'
+             'Somos Ciudadanos Católicos'
   ],
   pulpit: ['Priest\'s Pulpit',
-    'Púlpito del Sacerdote'
+           'Púlpito del Sacerdote'
   ],
   vocations: ['Pray for Vocations',
-    'Oremos por las vocaciones'
+              'Oremos por las vocaciones'
   ],
   readings: ['Today\'s Readings',
-    'Las Lecturas de Hoy'
+             'Las Lecturas de Hoy'
   ],
   site: ['About this website',
-    'Acerca de Este Sitio Web'
+         'Acerca de Este Sitio Web'
   ],
   calendar: ['Calendar',
-    'Calendario'
+             'Calendario'
   ],
   pastors: ['Pastor\'s Page',
-    'Página del Pastor'
+            'Página del Pastor'
   ],
   thomas: ['St. Thomas More',
-    'Santo Tomás Moro'
+           'Santo Tomás Moro'
   ]
 }
