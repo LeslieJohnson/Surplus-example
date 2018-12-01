@@ -121,7 +121,7 @@ div.main {
     top: 20px;
   }
   nav.topNav {
-    font-size: 0.8em;
+    font-size: 1em;
   }
   #previous, #next {
     top: 5em;
@@ -158,7 +158,7 @@ div.main {
     top: 10em;
   }
   nav.topNav {
-    font-size: 0.8em;
+    font-size: 1em;
   }
   .sidenav div {
     /*font-size: 0.5em;*/
@@ -192,7 +192,7 @@ div.main {
     top: 100px;
   }
   nav.topNav {
-    font-size: 1em;
+    font-size: 1.2em;
   }
   .sidenav div {
     font-size: 1em;
